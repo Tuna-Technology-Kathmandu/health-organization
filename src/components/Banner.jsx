@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Banner = ({ pageTitle }) => {
   const bannerStyle = {
@@ -30,9 +31,9 @@ export const Banner = ({ pageTitle }) => {
 
   const breadcrumbStyle = {
     position: "absolute",
-    top: "20px", // Keep it slightly from the top
-    left: "50%", // Center horizontally
-    transform: "translateX(-50%)", // Adjust for centering
+    top: "40px",
+    left: "50%",
+    transform: "translateX(-50%)",
     color: "white",
     fontSize: "14px",
     fontWeight: "bold",
@@ -47,7 +48,12 @@ export const Banner = ({ pageTitle }) => {
 
       {/* Breadcrumb (Centered at Top) */}
       <div style={breadcrumbStyle}>
-        <span>Home</span> &gt; <span>{pageTitle}</span>
+        <span>
+          <Link to="/" className="text-decoration-none text-white">
+            Home
+          </Link>
+        </span>{" "}
+        &gt; <span>{pageTitle}</span>
       </div>
 
       {/* Page Title */}
