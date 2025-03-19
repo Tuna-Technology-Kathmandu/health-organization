@@ -5,7 +5,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 const Navbar = () => {
   return (
     <>
-      <div className="d-flex justify-content-between align-items-center px-4 pb-4">
+      <div className="d-flex justify-content-between align-items-center px-4 pb-2 pt-2">
         <div className="">
           <img
             src="https://placehold.co/600x400"
@@ -23,7 +23,7 @@ const Navbar = () => {
           }}
         >
           <h5>
-            All Nepal Health Treatment Clinic Nepal
+            <span className="fw-bold">All Nepal Health Treatment Clinic Nepal</span>
             <p className="d-flex justify-content-center">Raniban, Kathmandu</p>
           </h5>
         </div>
@@ -40,7 +40,13 @@ const Navbar = () => {
         </div>
       </div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary navbar-bg">
-        <div className="container-fluid">
+        <div className="container-fluid fw-semibold"
+      style={{
+        fontFamily:"Poppins",
+        background:"#3BBCF6",
+        height:"60px",
+      
+      }}>
           {/* <a className="navbar-brand" href="#">
             Navbar
           </a> */}
