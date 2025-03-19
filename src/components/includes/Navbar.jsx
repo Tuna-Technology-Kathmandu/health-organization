@@ -37,9 +37,9 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" aria-disabled="true">
-                Disabled
-              </a>
+              <Link to="/service" className="nav-link">
+                Facilities & Services
+              </Link>
             </li>
           </ul>
           <form className="d-flex" role="search">

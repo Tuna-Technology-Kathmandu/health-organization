@@ -1,0 +1,32 @@
+[
+  {
+    "title": "First Aid Training",
+    "description": "We provide first aid training for students and staff to handle emergencies like injuries, burns, and choking, with certification upon completion.",
+    "image": "first-aid.png"
+  },
+  {
+    "title": "Mental Health Screening",
+    "description": "We provide first aid training for students and staff to handle emergencies like injuries, burns, and choking, with certification upon completion.",
+    "image": "mental-health.png"
+  },
+  {
+    "title": "Health Camp at Your Institution",
+    "description": "We provide first aid training for students and staff to handle emergencies like injuries, burns, and choking, with certification upon completion.",
+    "image": "health-camp.png"
+  },
+  {
+    "title": "Mini Clinic Setup with Nursing Staff",
+    "description": "We provide first aid training for students and staff to handle emergencies like injuries, burns, and choking, with certification upon completion.",
+    "image": "mini-clinic.png"
+  },
+  {
+    "title": "Nursing Care",
+    "description": "We provide first aid training for students and staff to handle emergencies like injuries, burns, and choking, with certification upon completion.",
+    "image": "nursing-care.png"
+  },
+  {
+    "title": "Clinic Setup Only",
+    "description": "We provide first aid training for students and staff to handle emergencies like injuries, burns, and choking, with certification upon completion.",
+    "image": "clinic-setup.png"
+  }
+]
