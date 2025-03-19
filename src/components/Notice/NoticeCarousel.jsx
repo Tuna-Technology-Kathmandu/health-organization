@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 
-import featuredNotice from "../utils/featuredNotice.json";
-import "../assets/css/Notice.css";
+import NoticeAction from "../../actions/NoticeAction";
+import featuredNotice from "../../utils/featuredNotice.json";
+import "../../assets/css/Notice.css";
 
 export const NoticeCarousel = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    NoticeAction.getNotices()
+      .then((response) => {
+        const data = response.data;
+        setData(data);
+      })
+      .catch((error) => console.error("Error fetching notices:", error));
+  }, []);
+
   const settings = {
     dots: false,
     infinite: true,
@@ -21,20 +33,22 @@ export const NoticeCarousel = () => {
   return (
     <div className="notice-carousel-container">
       <Slider {...settings}>
-        {featuredNotice.map((item, index) => (
+        {data.map((item, index) => (
           <div className="card text-bg-dark notice-card" key={item.id}>
             <img
-              src={item.image}
+              src={featuredNotice[0].image}
               className="card-img rounded-4 img-fluid"
-              alt={item.title}
+              alt={item.title.rendered}
             />
             <div className="card-img-overlay d-flex flex-column justify-content-around">
               <div className="p-3 badge rounded-pill text-bg-primary w-25">
                 Featured Information
               </div>
               <div className="p-2">
-                <h4>{item.title}</h4>
-                <p>{item.description}</p>
+                <h4>{item.title.rendered}</h4>
+                <p
+                  dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}
+                />
               </div>
             </div>
           </div>
