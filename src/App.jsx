@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import { Home } from "./pages/Home/index";
@@ -10,6 +11,7 @@ import Contactus from "./pages/ContactUs/Contact";
 import "./App.css";
 
 function App() {
+  // axios.defaults.url = import.meta.env.base_url;
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
