@@ -15,16 +15,17 @@ const ClinicBranch = () => {
         fontFamily:"Poppins"
     }}>
         <div>
-            <div className='container py-5 ms-2'>
+            <div className=' py-5 ms-3'>
                 <h4 className='pb-4'> Our Clinic Branches</h4>
              <div className='row'>
              {branches.map((branch) => (
-              <div className='col-lg-3 col-md-6 col-sm-12' key={branch.id}>
+              <div className='col-lg-3 col-md-6 col-sm-6' key={branch.id}>
                 <div className="card shadow-sm d-flex justify-content-center align-items-center pt-4"
                 style={{
                     width: '270px',
                     height: '350px',
                     position: 'relative',
+                    margin:"2px"
                     }}>
                   <img
                     src={branch.logo}
