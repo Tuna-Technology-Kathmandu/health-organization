@@ -6,7 +6,7 @@ import logo from "../../assets/images/logo.png";
 const Navbar = () => {
   return (
     <>
-      <div className="d-flex justify-content-between align-items-center px-4 pb-2 pt-2">
+      <div className="d-flex justify-content-between align-items-center px-4 pt-1">
         <div className="">
           <img
             src={logo}
@@ -24,7 +24,6 @@ const Navbar = () => {
           }}
         >
           <h5>
-
             <span className="fs-5">All Nepal Health Treatment Clinic Nepal</span>
             <p className="d-flex justify-content-center fs-6">Raniban, Kathmandu</p>
           </h5>
