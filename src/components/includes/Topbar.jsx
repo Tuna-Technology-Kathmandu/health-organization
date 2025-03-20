@@ -33,18 +33,10 @@ export const Topbar = () => {
         </div>
         <div style={{color:"#032B7F", fontFamily:"Poppins"}} className="fw-bold">
             <span className="me-2">Follow Us</span>
-            <a href="" >
-            <FaFacebookF size={20} className=" text-white me-1 rounded-5" style={{background:"#032B7F", padding:"3px"}}/>
-            </a>
-            <a href="">
-            <FaInstagram size={20} className=" text-white me-1 rounded-5 " style={{background:"#032B7F", padding:"3px"}}/>
-            </a>
-            <a href="">
-            <TiSocialLinkedin size={20} className=" text-white me-1 rounded-5" style={{background:"#032B7F", padding:"1px"}}/>
-            </a>
-            <a href="">
-            <FaXTwitter size={20} className=" text-white me-1 rounded-5" style={{background:"#032B7F", padding:"3px"}}/>
-            </a> 
+            <FaFacebookF  className="border text-white me-1 rounded-5 fs-5" style={{background:"#032B7F", padding:"3px"}}/>{" "}
+            <FaInstagram size={20} className="border text-white me-1 rounded-5 " style={{background:"#032B7F", padding:"3px"}}/>{" "}
+            <TiSocialLinkedin size={20} className="border text-white me-1 rounded-5" style={{background:"#032B7F", padding:"1px"}}/>{" "}
+            <FaXTwitter size={20} className="border text-white me-1 rounded-5" style={{background:"#032B7F", padding:"3px"}}/> 
         </div>
       </div>
     </div>
