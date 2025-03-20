@@ -8,7 +8,7 @@ import { IoMdMail } from "react-icons/io";
 const Contactus = () => {
   return (
     <>
-      <Banner pageTitle="Contactus" />
+      <Banner pageTitle="Contact Us" />
 
       <div
   className="border rounded-3 shadow d-flex flex-column flex-lg-row justify-content-center align-items-center position-relative mx-auto"
