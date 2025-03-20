@@ -8,6 +8,7 @@ import { Services } from "./pages/Services/Services";
 import Contactus from "./pages/ContactUs/Contact";
 
 import "./App.css";
+import Aboutus from "./pages/AboutUs/Aboutus";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/notice" element={<Notice />} />
         <Route path="/service" element={<Services />} />
         <Route path="/contact-us" element={<Contactus />} />
+        <Route path="about-us" element={<Aboutus />} />
       </Route>
     </Routes>
   );
