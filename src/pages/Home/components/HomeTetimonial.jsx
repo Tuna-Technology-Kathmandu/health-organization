@@ -14,7 +14,7 @@ const GET_TESTIMONIALS = gql`
         excerpt
         featuredImage {
           node {
-            link
+            mediaItemUrl
           }
         }
       }
@@ -126,8 +126,8 @@ export const HomeTestimonial = () => {
                 >
                   <div style={{ display: "flex", alignItems: "center" }}>
                     <img
-                      src={testimonial.link}
-                      alt={testimonial.name}
+                      src={testimonial.featuredImage.node.mediaItemUrl}
+                      alt={testimonial.title}
                       style={{
                         width: "40px",
                         height: "40px",

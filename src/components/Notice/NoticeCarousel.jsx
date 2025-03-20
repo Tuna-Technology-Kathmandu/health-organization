@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 
 import NoticeAction from "../../actions/NoticeAction";
-import featuredNotice from "../../utils/featuredNotice.json";
 import "../../assets/css/Notice.css";
 
 export const NoticeCarousel = () => {
@@ -33,26 +32,36 @@ export const NoticeCarousel = () => {
   return (
     <div className="notice-carousel-container">
       <Slider {...settings}>
-        {data.map((item, index) => (
-          <div className="card text-bg-dark notice-card" key={item.id}>
-            <img
-              src={featuredNotice[0].image}
-              className="card-img rounded-4 img-fluid"
-              alt={item.title.rendered}
-            />
-            <div className="card-img-overlay d-flex flex-column justify-content-around">
-              <div className="p-3 badge rounded-pill text-bg-primary w-25">
-                Featured Information
-              </div>
-              <div className="p-2">
-                <h4>{item.title.rendered}</h4>
-                <p
-                  dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}
+        {data.map((item, index) => {
+          const featuredImageUrl =
+            item._embedded["wp:featuredmedia"][0].source_url;
+
+          console.log(featuredImageUrl);
+          return (
+            <div className="card text-bg-dark notice-card" key={index}>
+              {featuredImageUrl && (
+                <img
+                  src={featuredImageUrl}
+                  className="card-img rounded-4 img-fluid"
+                  alt={item.title.rendered}
                 />
+              )}
+              <div className="card-img-overlay d-flex flex-column justify-content-around">
+                <div className="p-3 badge rounded-pill text-bg-primary w-25">
+                  Featured Information
+                </div>
+                <div className="p-2">
+                  <h4>{item.title.rendered}</h4>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: item.excerpt.rendered,
+                    }}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </Slider>
     </div>
   );

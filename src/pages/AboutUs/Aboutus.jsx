@@ -7,109 +7,122 @@ const Aboutus = () => {
   return (
     <>
       <Banner pageTitle="About Us" />
-      <div className="about-us">
-        <div className="container AboutUs py-2 my-5 px-0 ms-4">
-          <h2 className="mb-3">About Us</h2>
-          <div
-            className="row"
-            style={{
-              height: "450px",
-              width: "1290px",
-              marginTop: "20px",
-            }}
-          >
-            <div
-              className="col-lg-7"
-              style={{
-                padding: "10px",
-                fontFamily: "Poppins",
-                lineHeight: "40px",
-                width: "712px",
-              }}
-            >
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae
-                vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-                voluptas sit aspernatur aut odit aut fugit, sed quia.
-              </p>
-            </div>
-            <div className="col-lg-5">
-              <img
-                src="https://placehold.co/600x400"
-                alt=""
-                className="img-fluid"
-                style={{
-                  height: "450px",
-                  width: "520px",
-                  marginTop: "-35px",
-                  marginLeft:"-5px",
-                }}
-              />
-            </div>
+      <div className="section my-5 py-2">
+        <h4 className="mx-5">About Us</h4>
+        <div class="d-flex justify-content-between mx-5 g-2">
+          <div className="">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit
+              dolores, praesentium, odit excepturi quo minima pariatur
+              dignissimos delectus reiciendis commodi earum dicta doloribus
+              quaerat, voluptatum fugiat provident voluptatibus aspernatur vero.
+            </p>
+          </div>
+          <div className="">
+            <img
+              src="https://placehold.co/600x400"
+              alt=""
+              className="img-fluid"
+            />
           </div>
         </div>
-        <div className="container OurMissionAndVision py-2 my-5 px-0 ms-4">
-          <h2 className="mb-3">Our Mission and Vision</h2>
-          <div
-            className="row"
-            style={{
-              height: "450px",
-              width: "1290px",
-              marginTop: "20px",
-            }}
-          >
-            <div className="col-lg-5">
-              <img
-                src="https://placehold.co/600x400"
-                alt=""
-                className="img-fluid"
-                style={{
-                  height: "430px",
-                  width: "520px",
-                  marginTop: "-25px",
-                  marginLeft:"-5px",
-                }}
-              />
-            </div>
-            <div
-              className="col-lg-7"
-              style={{
-                padding: "10px",
-                fontFamily: "Poppins",
-                lineHeight: "40px",
-                width: "712px",
-                height:"450px"
-              }}
-            >
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-                quae ab illo inventore veritatis et quasi architecto beatae
-                vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
-                voluptas sit aspernatur aut odit aut fugit, sed quia.
-              </p>
-            </div>
-          </div>
-        </div>
-        <MeetDoctor />
-        <ClinicBranch />
       </div>
+
+      <div className="container py-2 my-5 px-0 ms-4 py-5">
+        <h2 className="mb-3">About Us</h2>
+        <div className="row">
+          <div
+            className="col-lg-7"
+            style={{
+              padding: "10px",
+              fontFamily: "Poppins",
+              lineHeight: "40px",
+              width: "712px",
+            }}
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum. Sed
+              ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae ab illo inventore veritatis et quasi architecto beatae vitae
+              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+              aspernatur aut odit aut fugit, sed quia.
+            </p>
+          </div>
+          <div className="col-lg-5">
+            <img
+              src="https://placehold.co/600x400"
+              alt=""
+              className="img-fluid"
+              style={{
+                height: "450px",
+                width: "100%",
+                marginTop: "-35px",
+                marginLeft: "-5px",
+              }}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="container OurMissionAndVision py-2 my-5 px-0 ms-4">
+        <h2 className="mb-3">Our Mission and Vision</h2>
+        <div
+          className="row"
+          style={{
+            height: "450px",
+            width: "1290px",
+            marginTop: "20px",
+          }}
+        >
+          <div className="col-lg-5">
+            <img
+              src="https://placehold.co/600x400"
+              alt=""
+              className="img-fluid"
+              style={{
+                height: "430px",
+                width: "520px",
+                marginTop: "-25px",
+                marginLeft: "-5px",
+              }}
+            />
+          </div>
+          <div
+            className="col-lg-7"
+            style={{
+              padding: "10px",
+              fontFamily: "Poppins",
+              lineHeight: "40px",
+              width: "712px",
+              height: "450px",
+            }}
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum. Sed
+              ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae ab illo inventore veritatis et quasi architecto beatae vitae
+              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+              aspernatur aut odit aut fugit, sed quia.
+            </p>
+          </div>
+        </div>
+      </div>
+      <MeetDoctor />
+      <ClinicBranch />
+
     </>
   );
 };
