@@ -41,7 +41,9 @@ const Navbar = () => {
         </div>
       </div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary navbar-bg">
-        <div className="container-fluid"
+
+        <div className="container-fluid fw-semibold"
+
       style={{
         fontFamily:"Poppins",
         background:"#3BBCF6",
