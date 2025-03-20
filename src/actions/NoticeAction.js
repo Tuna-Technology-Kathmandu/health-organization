@@ -6,7 +6,7 @@ class NoticesApi extends ApiClient {
   }
 
   getNotices() {
-    return this.get("/notice");
+    return this.get("/notice?_embed");
   }
 
   getPinnedNotices() {

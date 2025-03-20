@@ -32,30 +32,36 @@ export const NoticeCarousel = () => {
   return (
     <div className="notice-carousel-container">
       <Slider {...settings}>
-        {data.length === 0
-          ? "Nothing To Display"
-          : data.map((item, index) => (
-              <div className="card text-bg-dark notice-card" key={index}>
+        {data.map((item, index) => {
+          const featuredImageUrl =
+            item._embedded["wp:featuredmedia"][0].source_url;
+
+          console.log(featuredImageUrl);
+          return (
+            <div className="card text-bg-dark notice-card" key={index}>
+              {featuredImageUrl && (
                 <img
-                  src=""
+                  src={featuredImageUrl}
                   className="card-img rounded-4 img-fluid"
                   alt={item.title.rendered}
                 />
-                <div className="card-img-overlay d-flex flex-column justify-content-around">
-                  <div className="p-3 badge rounded-pill text-bg-primary w-25">
-                    Featured Information
-                  </div>
-                  <div className="p-2">
-                    <h4>{item.title.rendered}</h4>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: item.excerpt.rendered,
-                      }}
-                    />
-                  </div>
+              )}
+              <div className="card-img-overlay d-flex flex-column justify-content-around">
+                <div className="p-3 badge rounded-pill text-bg-primary w-25">
+                  Featured Information
+                </div>
+                <div className="p-2">
+                  <h4>{item.title.rendered}</h4>
+                  <p
+                    dangerouslySetInnerHTML={{
+                      __html: item.excerpt.rendered,
+                    }}
+                  />
                 </div>
               </div>
-            ))}
+            </div>
+          );
+        })}
       </Slider>
     </div>
   );
