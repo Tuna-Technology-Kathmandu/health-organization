@@ -2,7 +2,7 @@ import ApiClient from "./BaseAction";
 
 class NoticesApi extends ApiClient {
   constructor() {
-    super("https://test.devabhishek.com/wp-json/wp/v2");
+    super("http://localhost:10003/wp-json/wp/v2");
   }
 
   getNotices() {

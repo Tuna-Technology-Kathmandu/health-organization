@@ -1,31 +1,53 @@
 import React from "react";
+import { gql, useQuery } from "@apollo/client";
 
-import service from "../../../utils/homeServiceList.json";
+import client from "../../../utils/ApolloClient";
+import { ServicePlaceholder } from "../../../assets/css/skelton/Service";
+
+const GET_SERVICES = gql`
+  query SERVICE {
+    services(first: 4) {
+      nodes {
+        title
+        excerpt
+        featuredImage {
+          node {
+            mediaItemUrl
+          }
+        }
+      }
+    }
+  }
+`;
 
 export const HomeService = () => {
+  const { loading, error, data } = useQuery(GET_SERVICES, { client });
+
+  if (loading) return <ServicePlaceholder />;
+  if (error) return <p>Error: {error.message}</p>;
+
   return (
     <div className="home-about-us" style={{ background: "#F4F3F1" }}>
       <div className="container py-5">
         <h3 className="mb-3">Our Services</h3>
         <div className="row g-3">
-          {service.map((item, index) => (
+          {data.services.nodes.map((item, index) => (
             <div className="col-lg-3 col-md-6 col-sm-12" key={index}>
               <div className="card">
                 <center>
                   <img
-                    src={item.image}
+                    src={item.featuredImage.node.mediaItemUrl}
                     alt={item.title}
                     className="img-fluid my-3"
                     style={{ width: 150 }}
                   />
                 </center>
                 <div className="card-body">
-                  <h4 className="text-center">{service[0].title}</h4>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Exercitationem culpa iusto nobis deserunt fugit quae quaerat
-                    obcaecati ipsam aperiam hic.
-                  </p>
+                  <h5 className="text-center">{item.title}</h5>
+                  <p
+                    className=""
+                    dangerouslySetInnerHTML={{ __html: item.excerpt }}
+                  />
                 </div>
               </div>
             </div>

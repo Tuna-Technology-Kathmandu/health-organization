@@ -1,6 +1,7 @@
 import React from "react";
+import { gql, useQuery } from "@apollo/client";
+import client from "../../utils/ApolloClient";
 import { Banner } from "../../components/Banner";
-import galleryData from "../../utils/gallery.json";
 import "../../assets/css/Gallery.css";
 
 const getRandomHeight = () => {
@@ -9,35 +10,43 @@ const getRandomHeight = () => {
   return 180 + (array[0] % 121); // Random value between 180 - 300
 };
 
+const GET_IMAGE = gql`
+  query IMAGES($id: ID!) {
+    page(id: $id, idType: DATABASE_ID) {
+      title
+      content(format: RENDERED)
+    }
+  }
+`;
+
 export const Gallery = () => {
+  const { loading, error, data } = useQuery(GET_IMAGE, {
+    client,
+    variables: { id: "35" },
+  });
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
+  // Function to extract image URLs from raw HTML
+  const extractImages = (htmlContent) => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlContent, "text/html");
+    return Array.from(doc.querySelectorAll("img")).map((img) => img.src);
+  };
+
+  const imageUrls = extractImages(data.page.content);
+
   return (
     <>
       <Banner pageTitle="Gallery" />
-      <div className="container my-5">
-        <ul class="nav nav-pills nav-fill">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
-              All
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              Images
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              Videos
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div className="masonry-layout container">
-        {galleryData.map((image, index) => (
-          <div key={image.id} className="masonry-item">
+      {/* Masonry Layout for Images */}
+      <div className="masonry-layout container my-5">
+        {imageUrls.map((src, index) => (
+          <div key={index} className="masonry-item">
             <img
-              src={image.src}
-              alt={image.alt}
+              src={src}
+              alt={`Gallery Image ${index + 1}`}
               className="gallery-image"
               style={{ height: `${getRandomHeight()}px` }}
             />

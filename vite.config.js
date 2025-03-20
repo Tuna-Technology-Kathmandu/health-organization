@@ -5,11 +5,11 @@ export default defineConfig({
   plugins: [react()],
   // server: {
   //   proxy: {
-  //     '/graphql': {
-  //       target: 'https://test.devabhishek.com',
+  //     '/wp-json': {
+  //       target: 'http://localhost:10003',
   //       changeOrigin: true,
-  //       secure: false,
-  //     },
-  //   },
-  // },
+  //       secure: false
+  //     }
+  //   }
+  // }
 });
