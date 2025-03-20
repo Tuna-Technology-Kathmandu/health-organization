@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
 import { Home } from "./pages/Home/index";
@@ -11,6 +12,7 @@ import "./App.css";
 import Aboutus from "./pages/AboutUs/Aboutus";
 
 function App() {
+  // axios.defaults.url = import.meta.env.base_url;
   return (
     <Routes>
       <Route path="/" element={<Layout />}>

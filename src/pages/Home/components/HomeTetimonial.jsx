@@ -2,10 +2,29 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useQuery, gql } from "@apollo/client";
 
-import testimonials from "../../../utils/homeTestimonial.json";
+import client from "../../../utils/ApolloClient";
+
+const GET_TESTIMONIALS = gql`
+  query TESTIMONIALS {
+    testimonials {
+      nodes {
+        title
+        excerpt
+        featuredImage {
+          node {
+            mediaItemUrl
+          }
+        }
+      }
+    }
+  }
+`;
 
 export const HomeTestimonial = () => {
+  const { loading, error, data } = useQuery(GET_TESTIMONIALS, { client });
+
   // Slider settings
   const settings = {
     dots: false,
@@ -36,6 +55,9 @@ export const HomeTestimonial = () => {
   };
 
   let sliderRef;
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
 
   return (
     <div style={{ padding: "50px 0" }}>
@@ -79,7 +101,7 @@ export const HomeTestimonial = () => {
 
         {/* Slider */}
         <Slider {...settings} ref={(slider) => (sliderRef = slider)}>
-          {testimonials.map((testimonial) => (
+          {data.testimonials.nodes.map((testimonial) => (
             <div key={testimonial.id} style={{ padding: "0 10px" }}>
               <div
                 style={{
@@ -93,7 +115,6 @@ export const HomeTestimonial = () => {
                   height: "100%",
                 }}
               >
-                {/* Header (Image + Name) */}
                 <div
                   style={{
                     display: "flex",
@@ -105,8 +126,8 @@ export const HomeTestimonial = () => {
                 >
                   <div style={{ display: "flex", alignItems: "center" }}>
                     <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
+                      src={testimonial.featuredImage.node.mediaItemUrl}
+                      alt={testimonial.title}
                       style={{
                         width: "40px",
                         height: "40px",
@@ -115,7 +136,7 @@ export const HomeTestimonial = () => {
                       }}
                     />
                     <h6 style={{ margin: 0, fontSize: "16px" }}>
-                      {testimonial.name}
+                      {testimonial.title}
                     </h6>
                   </div>
                   <span style={{ fontSize: "32px", fontWeight: "bold" }}>
@@ -124,9 +145,10 @@ export const HomeTestimonial = () => {
                 </div>
 
                 {/* Testimonial Text */}
-                <p style={{ fontSize: "14px", lineHeight: "1.6", margin: 0 }}>
-                  {testimonial.comment}
-                </p>
+                <p
+                  style={{ fontSize: "14px", lineHeight: "1.6", margin: 0 }}
+                  dangerouslySetInnerHTML={{ __html: testimonial.excerpt }}
+                />
               </div>
             </div>
           ))}
