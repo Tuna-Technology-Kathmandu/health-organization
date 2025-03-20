@@ -1,18 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaPhoneAlt } from "react-icons/fa";
+import logo from "../../assets/images/logo.png";
 
 const Navbar = () => {
   return (
     <>
-      <div className="d-flex justify-content-between align-items-center px-4 pb-4">
+      <div className="d-flex justify-content-between align-items-center px-4 pt-1">
         <div className="">
           <img
-            src="https://placehold.co/600x400"
+            src={logo}
             className=""
             style={{
-              width: "112px",
-              height: "83px",
+              width: "75px",
+              height: "55px",
             }}
           />
         </div>
@@ -23,8 +24,8 @@ const Navbar = () => {
           }}
         >
           <h5>
-            All Nepal Health Treatment Clinic Nepal
-            <p className="d-flex justify-content-center">Raniban, Kathmandu</p>
+            <span className="fs-5">All Nepal Health Treatment Clinic Nepal</span>
+            <p className="d-flex justify-content-center fs-6">Raniban, Kathmandu</p>
           </h5>
         </div>
         <div
@@ -40,7 +41,13 @@ const Navbar = () => {
         </div>
       </div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary navbar-bg">
-        <div className="container-fluid">
+        <div className="container-fluid"
+      style={{
+        fontFamily:"Poppins",
+        background:"#3BBCF6",
+        height:"60px",
+      
+      }}>
           {/* <a className="navbar-brand" href="#">
             Navbar
           </a> */}
