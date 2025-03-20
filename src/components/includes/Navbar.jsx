@@ -26,7 +26,7 @@ const Navbar = () => {
           <h5>
 
             <span className="fs-5">All Nepal Health Treatment Clinic Nepal</span>
-            <p className="d-flex justify-content-center fs-6">Raniban, Kathmandu</p>main
+            <p className="d-flex justify-content-center fs-6">Raniban, Kathmandu</p>
           </h5>
         </div>
         <div
