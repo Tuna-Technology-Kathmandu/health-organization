@@ -41,6 +41,7 @@ const Navbar = () => {
         </div>
       </div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary navbar-bg">
+
         <div className="container-fluid fw-semibold"
 
       style={{
