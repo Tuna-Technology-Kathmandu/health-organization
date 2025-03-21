@@ -7,7 +7,7 @@ import SearchWidget from "./SearcHWidget";
 const Navbar = () => {
   return (
     <>
-      <div className="container d-flex justify-content-between align-items-center mt-1">
+      <div className="container d-flex justify-content-between align-items-center mt-4 mb-3">
         <div className="">
           <img
             src={logo}
@@ -18,37 +18,28 @@ const Navbar = () => {
             }}
           />
         </div>
-        <div
-          className=""
-          style={{
-            fontFamily: "Poppins",
-          }}
-        >
-          <h5 className="ms-5 text-center">
-            <span className="fs-5">All Nepal Health Treatment Clinic Nepal</span>
-            <p className="d-flex justify-content-center fs-6">Raniban, Kathmandu</p>
-          </h5>
-        </div>
-        <div style={{
-            fontFamily: "Poppins",
-          }}
-        >
-          <p>
-            <FaPhoneAlt /> {""}
-            01-4950371
+
+        <h5 className="ms-5 text-center">
+          <span className="fs-5">All Nepal Health Treatment Clinic Nepal</span>
+          <p className="d-flex justify-content-center fs-6">
+            Raniban, Kathmandu
           </p>
-        </div>
+        </h5>
+
+        <p>
+          <FaPhoneAlt /> {""}
+          01-4950371
+        </p>
       </div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary navbar-bg">
-
-        <div className="container-fluid"
-
-      style={{
-        fontFamily:"Poppins",
-        background:"#3BBCF6",
-        height:"60px",
-      
-      }}>
+        <div
+          className="container-fluid"
+          style={{
+            fontFamily: "Poppins",
+            background: "#3BBCF6",
+            height: "60px",
+          }}
+        >
           <button
             className="navbar-toggler"
             type="button"
@@ -92,8 +83,7 @@ const Navbar = () => {
                   Notice
                 </Link>
               </li>
-            </ul> 
-            
+            </ul>
           </div>
           <SearchWidget />
         </div>
