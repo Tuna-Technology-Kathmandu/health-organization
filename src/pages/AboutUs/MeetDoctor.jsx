@@ -9,11 +9,12 @@ const MeetDoctor = () => {
         background:"#F4F3F1"
     }}
     >
-        <div className='container py-5 mx-2'>
+        <div className=' py-5 mx-2'>
+            <div className='ms-3'>
             <h3 className='pb-4'>Meet our Doctors</h3>
         <div className='row'>
             {doctor.map((item, index) => (
-                <div className='col-lg-3 col-md-6 col-sm-12' key={index}>
+                <div className='col-lg-3 col-md-6 col-sm-6' key={index}>
                     <div className='card'
                     style={{
                         width: '270px',
@@ -21,7 +22,7 @@ const MeetDoctor = () => {
                         position: 'relative',
                         borderRadius: '5px',
                         border: '1px solid #23232380',
-                        margin:"10px",
+                        margin:"5px"
                         }}>
                         <center>
                             <img
@@ -44,6 +45,8 @@ const MeetDoctor = () => {
             ))}
 
         </div>
+            </div>
+            
         </div>
     </div>
       

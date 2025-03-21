@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaPhoneAlt } from "react-icons/fa";
 import logo from "../../assets/images/logo.png";
+import SearchWidget from "./SearcHWidget";
 
 const Navbar = () => {
   return (
     <>
-      <div className="d-flex justify-content-between align-items-center px-4 pt-1">
+      <div className="container d-flex justify-content-between align-items-center mt-1">
         <div className="">
           <img
             src={logo}
@@ -23,14 +24,12 @@ const Navbar = () => {
             fontFamily: "Poppins",
           }}
         >
-          <h5>
+          <h5 className="ms-5 text-center">
             <span className="fs-5">All Nepal Health Treatment Clinic Nepal</span>
             <p className="d-flex justify-content-center fs-6">Raniban, Kathmandu</p>
           </h5>
         </div>
-        <div
-          className="px-4"
-          style={{
+        <div style={{
             fontFamily: "Poppins",
           }}
         >
@@ -42,7 +41,7 @@ const Navbar = () => {
       </div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary navbar-bg">
 
-        <div className="container-fluid fw-semibold"
+        <div className="container-fluid"
 
       style={{
         fontFamily:"Poppins",
@@ -50,9 +49,6 @@ const Navbar = () => {
         height:"60px",
       
       }}>
-          {/* <a className="navbar-brand" href="#">
-            Navbar
-          </a> */}
           <button
             className="navbar-toggler"
             type="button"
@@ -96,19 +92,10 @@ const Navbar = () => {
                   Notice
                 </Link>
               </li>
-            </ul>
-            <form className="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
+            </ul> 
+            
           </div>
+          <SearchWidget />
         </div>
       </nav>
     </>
