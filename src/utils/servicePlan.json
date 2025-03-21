@@ -1,0 +1,39 @@
+[
+    {
+        "title":"Fundamental Health Care Plan",
+        "time": "Per Month",
+        "price": "Rs. 150",
+        "features":[
+        "General Health Checkup Program for Students.",
+        "General Dental Checkup.",
+        "ENT Checkup (Ear, Nose, Throat).",
+        "Mental Health Screening and Reporting.",
+        "Lab Tests (Blood Grouping ABO, Urine R/E, Stool R/E)."
+    ]
+    },
+
+    { 
+        "title":"Complete Health Care Plan",
+        "time": "Per Month",
+        "price": "Rs. 450",
+        "features":[ 
+        "All items of the Broad Health Care Plan plus:",
+        "Doctor on Site.",
+        "Continuous Psychological Monitoring of Students.",
+        "Basic Lab Tests (CBC, Lipid Profile, RFT, LFT, TSH, Uric Acid).",
+        "Meditation and Memory Power Training."
+    ]
+    },
+
+    {
+        "title":"Broad Health Care Plan",
+        "time": "Per Month",
+        "price": "Rs. 200",
+        "features":[
+        "Advanced Level Clinic Setup and Nursing Care.",
+        "Doctor on Call for Emergencies.",
+        "Health Checkup of Students (General Checkup, Eye Checkup, Dental Checkup, ENT Checkup – twice a year).",
+        "Lab Tests (Blood Grouping ABO, Urine R/E, Stool R/E – twice a year)."
+    ]
+    }
+]
