@@ -46,8 +46,6 @@ const Navbar = () => {
       style={{
         fontFamily:"Poppins",
         background:"#3BBCF6",
-        height:"60px",
-      
       }}>
           <button
             className="navbar-toggler"
