@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { useQuery, gql } from "@apollo/client";
 
 import client from "../../../utils/ApolloClient";
+import { HomeTestimonialShimmer } from "../../../assets/css/skelton/HomeTestimonialShimmer";
 
 const GET_TESTIMONIALS = gql`
   query TESTIMONIALS {
@@ -56,7 +57,7 @@ export const HomeTestimonial = () => {
 
   let sliderRef;
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <HomeTestimonialShimmer />;
   if (error) return <p>Error: {error.message}</p>;
 
   return (
