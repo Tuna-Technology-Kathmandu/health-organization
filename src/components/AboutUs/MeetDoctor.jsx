@@ -2,6 +2,7 @@ import React from "react";
 import { gql, useQuery } from "@apollo/client";
 
 import client from "../../utils/ApolloClient";
+import { MeetDoctorShimmer } from "../../assets/css/skelton/MeetDoctorShimmer";
 
 const GET_ITEMS = gql(`
     query TEAMS {
@@ -20,7 +21,7 @@ const GET_ITEMS = gql(`
 const MeetDoctor = () => {
   const { loading, error, data } = useQuery(GET_ITEMS, { client });
 
-  if (loading) return <p>Loading</p>;
+  if (loading) return <MeetDoctorShimmer />;
   if (error) return <p>Error</p>;
 
   return (
