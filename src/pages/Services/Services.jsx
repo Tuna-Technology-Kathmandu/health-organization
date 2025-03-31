@@ -8,6 +8,8 @@ import plans from "../../utils/servicePlan.json";
 import { FaCheckCircle } from "react-icons/fa";
 import { useState } from "react";
 
+import { ServicesCard } from "../../components/Services/ServicesCard";
+
 export const Services = () => {
   const [isYearly, setIsYearly] = useState(false);
   const toggleBilling = () => {
@@ -158,6 +160,7 @@ export const Services = () => {
             </div>
           ))}
         </div>
+        <ServicesCard />
       </div>
     </div>
   );

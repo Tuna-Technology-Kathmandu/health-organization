@@ -6,7 +6,7 @@ import "../../../assets/css/HomeSlider.css";
 
 const images = [
   {
-    title: "All Nepal Health Treatment Clinic",
+    title: "All Nepal Health Treatment Clinic asdasd",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     image: "https://placehold.co/600x400",
@@ -47,9 +47,9 @@ export const HomeSlider = () => {
             >
               <div className="overlay"></div>
               <div className="content">
-                <h1>{item.title}</h1>
-                <p>{item.description}</p>
-                <button>Contact Us</button>
+                <h1 className="fs-1 fs-md-2 fs-lg-3">{item.title}</h1>
+                <p className="fs-5 fs-md-6 fs-lg-7">{item.description}</p>
+                <button className="btn btn-primary">Contact Us</button>
               </div>
             </div>
           </div>

@@ -1,3 +1,7 @@
+body {
+  font-family: "Poppins";
+}
+
 .top-bar {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -6,6 +10,6 @@
   padding: 12px;
   background-color: #3bbcf6;
 }
-.nav-item a{
- color:white;
+.nav-item a {
+  color: white;
 }
