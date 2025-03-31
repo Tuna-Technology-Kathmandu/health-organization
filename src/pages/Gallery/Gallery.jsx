@@ -18,41 +18,73 @@ const GET_IMAGE = gql`
     }
   }
 `;
-
 export const Gallery = () => {
   const { loading, error, data } = useQuery(GET_IMAGE, {
     client,
     variables: { id: "35" },
   });
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return (
+    <>
+      <Banner pageTitle="Gallery" />
+      <GalleryShimmer />
+    </>
+  );
+
   if (error) return <p>Error: {error.message}</p>;
 
   // Function to extract image URLs from raw HTML
   const extractImages = (htmlContent) => {
+    if (!htmlContent) return [];
     const parser = new DOMParser();
     const doc = parser.parseFromString(htmlContent, "text/html");
     return Array.from(doc.querySelectorAll("img")).map((img) => img.src);
   };
 
-  const imageUrls = extractImages(data.page.content);
+  const imageUrls = data?.page?.content ? extractImages(data.page.content) : [];
 
   return (
     <>
       <Banner pageTitle="Gallery" />
-      {/* Masonry Layout for Images */}
       <div className="masonry-layout container my-5">
-        {imageUrls.map((src, index) => (
-          <div key={index} className="masonry-item">
-            <img
-              src={src}
-              alt={`Gallery Image ${index + 1}`}
-              className="gallery-image"
-              style={{ height: `${getRandomHeight()}px` }}
-            />
-          </div>
-        ))}
+        {imageUrls.length > 0 ? (
+          imageUrls.map((src, index) => (
+            <div key={index} className="masonry-item">
+              <img
+                src={src}
+                alt={`Gallery Image ${index + 1}`}
+                className="gallery-image"
+                style={{ height: `${getRandomHeight()}px` }}
+                loading="lazy"
+              />
+            </div>
+          ))
+        ) : (
+          <p>No images found in gallery</p>
+        )}
       </div>
     </>
+  );
+};
+
+// Gallery Shimmer Component
+const GalleryShimmer = () => {
+  // Show 6 placeholder items
+  const shimmerItems = Array(6).fill(0);
+  
+  return (
+    <div className="masonry-layout container my-5">
+      {shimmerItems.map((_, index) => (
+        <div key={index} className="masonry-item placeholder-glow">
+          <div 
+            className="placeholder" 
+            style={{
+              height: `${180 + (index % 4) * 40}px`,
+              width: '100%'
+            }}
+          ></div>
+        </div>
+      ))}
+    </div>
   );
 };
