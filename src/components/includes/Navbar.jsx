@@ -40,6 +40,29 @@ const Navbar = () => {
             height: "60px",
           }}
         >
+          <h5 className="ms-5 text-center">
+            <span className="fs-5">All Nepal Health Treatment Clinic Nepal</span>
+            <p className="d-flex justify-content-center fs-6">Raniban, Kathmandu</p>
+          </h5>
+        </div>
+        <div style={{
+            fontFamily: "Poppins",
+          }}
+        >
+          <p>
+            <FaPhoneAlt /> {""}
+            01-4950371
+          </p>
+        </div>
+      </div>
+      <nav className="navbar navbar-expand-lg bg-body-tertiary navbar-bg">
+
+        <div className="container-fluid"
+
+      style={{
+        fontFamily:"Poppins",
+        background:"#3BBCF6",
+      }}>
           <button
             className="navbar-toggler"
             type="button"

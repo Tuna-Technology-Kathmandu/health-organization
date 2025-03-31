@@ -84,7 +84,7 @@ const Contactus = () => {
       }}
     >
       <div className="row mb-3">
-        <div className="col-12 col-md-6 col-sm-6">
+        <div className="col-12 col-md-6 col-sm-6 mb-3">
           <input
             type="text"
             className="form-control"
@@ -102,7 +102,7 @@ const Contactus = () => {
         </div>
       </div>
       <div className="row mb-3">
-        <div className="col-12 col-md-6 col-sm-6">
+        <div className="col-12 col-md-6 col-sm-6 mb-3">
           <input
             type="email"
             className="form-control"
