@@ -5,6 +5,8 @@ import { IoIosMailUnread } from "react-icons/io";
 
 import logo from "../../assets/images/logo.png";
 
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <>
@@ -27,25 +29,56 @@ const Footer = () => {
             </div>
             <div className="col-lg-2">
               <h4 className="mb-4">Links</h4>
-              <ul className="">
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Gallery</li>
-                <li>Our Services</li>
-                <li>Contact Us</li>
+              <ul className="list-unstyled fw-bold">
+                <li>
+                  <Link to="/" className="text-decoration-none">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/about-us" className="text-decoration-none">
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/gallery" className="text-decoration-none">
+                    Gallery
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/service" className="text-decoration-none">
+                    Facilities & Services
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact-us" className="text-decoration-none">
+                    Contact Us
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/notice" className="text-decoration-none">
+                    Notice
+                  </Link>
+                </li>
               </ul>
             </div>
             <div className="col-lg-4">
               <h4 className="mb-4">Contact Us</h4>
               <p className="mb-4">
                 <FaPhoneAlt />{" "}
-                <a className="ms-3 text-decoration-none text-dark">
+                <a
+                  href="tel:+9778899809"
+                  className="ms-3 text-decoration-none text-dark"
+                >
                   9778899809
                 </a>
               </p>{" "}
               <p>
                 <IoIosMailUnread />{" "}
-                <a className="ms-3 text-decoration-none text-dark">
+                <a
+                  href="mailto:info@someone.com"
+                  className="ms-3 text-decoration-none text-dark"
+                >
                   info@someone.com
                 </a>
               </p>

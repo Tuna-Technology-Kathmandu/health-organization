@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const HomeAbout = () => {
   return (
@@ -27,7 +28,7 @@ export const HomeAbout = () => {
               sapiente maxime? Excepturi inventore, recusandae ab repellendus
               quisquam accusamus deserunt et harum.
             </p>
-            <button className="btn btn-primary">View More</button>
+            <Link to="about-us" className="btn btn-primary m-2">View More</Link>
           </div>
           <div className="col-lg-5">
             <img

@@ -9,10 +9,10 @@ import { TiSocialLinkedin } from "react-icons/ti";
 export const Topbar = () => {
   return (
     <div className="top-bar fs-6" style={{ text: "#032B7F", fontFamily: "Poppins" }}>
-  <div className="container py-3">
+  <div className=" py-2 px-2">
     <div className="row align-items-center">
-      <div className="col-md-4 text-center text-md-start mb-2 mb-md-0" style={{ color: "#032B7F", fontFamily: "Poppins" }}>
-        <IoIosMailUnread /> 
+      <div className="col-md-4 text-center  mb-2 mb-md-0" style={{ color: "#032B7F", fontFamily: "Poppins" }}>
+        <IoIosMailUnread /> {""} 
         <a href="mailto:info@allnepalhealtreatment.com" className="text-decoration-none" style={{ color: "#032B7F" }}>
           info@allnepalhealtreatment.com
         </a>
@@ -23,7 +23,7 @@ export const Topbar = () => {
           987009990, 9888900098
         </a>
       </div>
-      <div className="col-md-4 text-center text-md-end fw-bold" style={{ color: "#032B7F", fontFamily: "Poppins" }}>
+      <div className="col-md-4 text-center  fw-bold" style={{ color: "#032B7F", fontFamily: "Poppins" }}>
         <span className="me-2">Follow Us</span>
         <a href="">
           <FaFacebookF size={20} className="text-white me-1 rounded-5" style={{ background: "#032B7F", padding: "3px" }} />

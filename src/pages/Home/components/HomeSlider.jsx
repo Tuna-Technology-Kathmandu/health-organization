@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../../../assets/css/HomeSlider.css";
+import { Link } from "react-router-dom";
 
 const images = [
   {
@@ -49,7 +50,7 @@ export const HomeSlider = () => {
               <div className="content">
                 <h1>{item.title}</h1>
                 <p>{item.description}</p>
-                <button>Contact Us</button>
+                <Link to="contact-us" className="btn text-white p-2 rounded bg-primary">Contact Us</Link>
               </div>
             </div>
           </div>

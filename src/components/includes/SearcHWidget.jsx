@@ -46,7 +46,7 @@ const SearchWidget = ({ setSearch }) => {
               value={query}
               onChange={handleChange}
               name="text"
-              className="form-control search-input"
+              className="search-input"
               autoComplete="off"
               //required
             />

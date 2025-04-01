@@ -12,7 +12,7 @@ const Aboutus = () => {
     <h2 className="mb-3">About Us</h2>
     <div className="row d-flex align-items-between justify-content-between g-3">
       <div className="col-lg-7 col-md-12 d-flex flex-wrap">
-        <p className="" style={{ fontFamily: "Poppins", lineHeight: "40px" }}>
+        <p className=" m-1 text-justify" style={{ fontFamily: "Poppins", lineHeight: "40px" }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
           enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -31,8 +31,8 @@ const Aboutus = () => {
         <img
           src="https://placehold.co/600x400"
           alt=""
-          className="img-fluid"
-          style={{ maxWidth: "100%", height: "100%" }}
+          className="img-fluid p-3"
+          style={{ maxWidth: "100%", height: "auto" }}
         />
       </div>
     </div>
@@ -44,12 +44,12 @@ const Aboutus = () => {
         <img
           src="https://placehold.co/600x400"
           alt=""
-          className="img-fluid"
+          className="img-fluid p-2"
           style={{ maxWidth: "100%", height: "auto" }}
         />
       </div>
       <div className="col-lg-7 col-md-12">
-        <p style={{ fontFamily: "Poppins", lineHeight: "40px" }}>
+        <p className="m-1 text-justify" style={{ fontFamily: "Poppins", lineHeight: "40px" }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
           enim ad minim veniam, quis nostrud exercitation ullamco laboris

@@ -1,11 +1,12 @@
 .search-input {
     width: 100%;
-    padding: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 25px;
     border-radius: 100px;
     border: 2px solid #fff;
-    font-size: 14px;
+    font-size: 12px;
     outline: none;
     background-color: transparent;
+    transform: translateX(4%);
   }
   
   .search-input:focus {
@@ -16,11 +17,10 @@
   
   .search-icon-container {
     position: absolute;
-    left: 14px;
+    left: 10px;
     top: 46%;
-    transform: translateY(-40%);
+    transform: translateY(-35%);
     cursor: pointer;
-    /* color: gray; */
     display: flex;
     align-items: center;
   }

@@ -7,38 +7,38 @@ import SearchWidget from "./SearcHWidget";
 const Navbar = () => {
   return (
     <>
-      <div className="container d-flex justify-content-between align-items-center mt-1">
-        <div className="">
-          <img
-            src={logo}
-            className=""
-            style={{
-              width: "75px",
-              height: "55px",
-            }}
-          />
-        </div>
-        <div
-          className=""
-          style={{
-            fontFamily: "Poppins",
-          }}
-        >
-          <h5 className="ms-5 text-center">
-            <span className="fs-5">All Nepal Health Treatment Clinic Nepal</span>
-            <p className="d-flex justify-content-center fs-6">Raniban, Kathmandu</p>
-          </h5>
-        </div>
-        <div style={{
-            fontFamily: "Poppins",
-          }}
-        >
-          <p>
-            <FaPhoneAlt /> {""}
-            01-4950371
-          </p>
-        </div>
-      </div>
+    <div className="d-flex justify-content-between align-items-center h-100 m-2">
+  {/* ANHT logo section */}
+  <div className="d-flex justify-content-center align-items-center mx-2">
+    <Link to="/">
+      <img
+        src={logo}
+        alt="Logo"
+        style={{
+          width: "75px",
+          height: "55px",
+        }}
+      />
+    </Link>
+  </div>
+
+  {/* name and address section */}
+  <div className="d-flex justify-content-center align-items-center flex-column mx-2 text-center" style={{ fontFamily: "Poppins" }}>
+    <span className="fs-5">All Nepal Health Treatment Clinic Nepal</span>
+    <span>Raniban, Kathmandu</span>
+  </div>
+
+  {/* number section */}
+  <div className="d-flex justify-content-center align-items-center flex-nowrap" style={{ fontFamily: "Poppins" }}>
+  <p className="d-flex align-items-center">
+    <FaPhoneAlt />
+    <span className="ms-1">01-4950371</span>
+  </p>
+</div>
+
+</div>
+
+
       <nav className="navbar navbar-expand-lg bg-body-tertiary navbar-bg">
 
         <div className="container-fluid"
