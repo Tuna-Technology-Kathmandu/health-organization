@@ -1,0 +1,37 @@
+.search-input {
+    width: 100%;
+    padding: 10px 10px 10px 25px;
+    border-radius: 100px;
+    border: 2px solid #fff;
+    font-size: 12px;
+    outline: none;
+    background-color: transparent;
+    transform: translateX(4%);
+  }
+  
+  .search-input:focus {
+    border-color: white;
+    background-color: transparent;
+    display: flex;
+  }
+  
+  .search-icon-container {
+    position: absolute;
+    left: 10px;
+    top: 46%;
+    transform: translateY(-35%);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-icon {
+    font-size: 22px;
+    color: white;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .search-icon:hover {
+    color: #4a5568;
+  }
+  

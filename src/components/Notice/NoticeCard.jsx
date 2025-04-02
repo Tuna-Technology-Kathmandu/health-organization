@@ -2,6 +2,7 @@ import React from "react";
 import { useQuery, gql } from "@apollo/client";
 import { FiLink } from "react-icons/fi";
 import client from "../../utils/ApolloClient";
+import { Link } from "react-router-dom";
 
 const GET_POSTS = gql`
   query NOTICES {
@@ -25,7 +26,7 @@ export const NoticeCard = () => {
     <>
       {data.notices.nodes.map((item, index) => (
         <div key={index}>
-          <div className="d-flex flex-row mb-3">
+          <Link to={`details/${item.slug}`} className="d-flex flex-row mb-3">
             <div className="p-4">
               <FiLink />
             </div>
@@ -33,7 +34,7 @@ export const NoticeCard = () => {
               <h6>{item?.title || ""}</h6>
               <p>{new Date(item.date).toDateString()}</p>
             </div>
-          </div>
+          </Link>
           {index !== data.notices.nodes.length - 1 && <hr />}
         </div>
       ))}

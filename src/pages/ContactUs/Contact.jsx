@@ -8,14 +8,14 @@ import { IoMdMail } from "react-icons/io";
 const Contactus = () => {
   return (
     <>
-      <Banner pageTitle="Contact Us" />
+    <Banner pageTitle="Get In Touch" />
 
       <div
   className="border rounded-3 shadow d-flex flex-column flex-lg-row justify-content-center align-items-center position-relative mx-auto"
   style={{
     width: "100%",
     maxWidth: "900px",
-    height: "auto",
+    height: "",
     minHeight: "400px",
     background: "white",
     marginLeft: "150px",
@@ -24,23 +24,23 @@ const Contactus = () => {
   }}
 >
   <div
-    className="mx-2 my-2 w-100 w-lg-50 rounded-3"
+    className="mx-2 my-2 w-auto w-lg-50 w-sm-25 rounded-3"
     style={{
       background: "#3BBCF6",
-      width: "400px",
-      height: "390px",
+      width: "350px",
+      height: "480px",
       backgroundColor: "#3BBCF6",
       fontFamily: "Poppins",
     }}
   >
-    <div className="py-4 mx-4">
+    <div className="py-5 mx-4 w-100 w-lg-50">
       <h4 className="d-flex text-white justify-content-center align-items-center">
         Contact Information
       </h4>
       <p
         className="text-white pt-2"
         style={{
-          width: "383px",
+          width: "350px",
           textAlign: "center",
         }}
       >
@@ -71,20 +71,20 @@ const Contactus = () => {
         </p>
         <p>
           <IoMdMail size={25} />{" "}
-          <a href="mailto:info@allnepalhealtreatment.com">allnepalhealthtreatmentclinic@gmail.com</a>
+          <a className="fw-medium" href="mailto:info@allnepalhealtreatment.com">allnepalhealthtreatmentclinic@gmail.com</a>
         </p>
       </div>
     </div>
   </div>
-  <div className="contact-form d-flex text-black justify-content-center align-items-center w-100 w-lg-50">
+  <div className="contact-form d-flex h-100 h-lg-50 h-sm-25 text-black justify-content-center align-items-center w-100 w-lg-50">
     <form
-      className="mx-4 px-4 w-100"
+      className=" px-4 w-100 "
       style={{
         fontFamily: "Poppins",
       }}
     >
       <div className="row mb-3">
-        <div className="col-12 col-md-6">
+        <div className="col-12 col-md-6 col-sm-6 mb-3">
           <input
             type="text"
             className="form-control"
@@ -92,7 +92,7 @@ const Contactus = () => {
             placeholder="First Name"
           />
         </div>
-        <div className="col-12 col-md-6">
+        <div className="col-12 col-md-6 col-sm-6">
           <input
             type="text"
             className="form-control"
@@ -102,7 +102,7 @@ const Contactus = () => {
         </div>
       </div>
       <div className="row mb-3">
-        <div className="col-12 col-md-6">
+        <div className="col-12 col-md-6 col-sm-6 mb-3">
           <input
             type="email"
             className="form-control"
@@ -110,7 +110,7 @@ const Contactus = () => {
             placeholder="Email Address"
           />
         </div>
-        <div className="col-12 col-md-6">
+        <div className="col-12 col-md-6 col-sm-6">
           <input
             type="tel"
             className="form-control"
@@ -127,7 +127,7 @@ const Contactus = () => {
           placeholder="Message"
         ></textarea>
       </div>
-      <button type="submit" className="btn btn-primary w-25">
+      <button type="submit" className="btn btn-primary w-25 mb-3">
         Submit
       </button>
     </form>
