@@ -14,7 +14,7 @@ const Aboutus = () => {
     <h2 className="mb-3">About Us</h2>
     <div className="row d-flex align-items-between justify-content-between g-3">
       <div className="col-lg-7 col-md-12 d-flex flex-wrap">
-        <p className=" m-1 text-justify" style={{ fontFamily: "Poppins", lineHeight: "40px" }}>
+        <p className=" m-2 text-justify" style={{ fontFamily: "Poppins", lineHeight: "40px" }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
           enim ad minim veniam, quis nostrud exercitation ullamco laboris
