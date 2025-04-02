@@ -90,7 +90,8 @@ const Navbar = () => {
                   Notice
                 </Link>
               </li>
-            </ul>
+            </ul> 
+            
           </div>
           <SearchWidget />
         </div>

@@ -2,6 +2,7 @@ import { gql, useQuery } from "@apollo/client";
 import React from "react";
 
 import client from "../../utils/ApolloClient";
+import { AboutUsDescriptionShimmer } from "../../assets/css/skelton/AboutUsDescriptionShimmer";
 
 const GET_ITEM = gql(`query IMAGES {
   miscellaneous(id: "64", idType: DATABASE_ID) {
@@ -12,7 +13,7 @@ const GET_ITEM = gql(`query IMAGES {
 
 export const AboutUsDescription = () => {
   let { loading, error, data } = useQuery(GET_ITEM, { client });
-  if (loading) return <p>Loading</p>;
+  if (loading) return <AboutUsDescriptionShimmer />;
   if (error) return <p>Error</p>;
 
   return (
