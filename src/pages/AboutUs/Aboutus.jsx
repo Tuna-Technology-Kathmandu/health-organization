@@ -1,7 +1,9 @@
 import React from "react";
 import { Banner } from "../../components/Banner";
-import MeetDoctor from "./MeetDoctor";
-import ClinicBranch from "./ClinicBranch";
+import MeetDoctor from "../../components/AboutUs/MeetDoctor";
+import ClinicBranch from "../../components/AboutUs/ClinicBranch";
+import { AboutUsDescription } from "../../components/AboutUs/AboutUsDescription";
+import { Mission } from "../../components/AboutUs/Mission";
 
 const Aboutus = () => {
   return (

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const images = [
   {
-    title: "All Nepal Health Treatment Clinic",
+    title: "All Nepal Health Treatment Clinic asdasd",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     image: "https://placehold.co/600x400",

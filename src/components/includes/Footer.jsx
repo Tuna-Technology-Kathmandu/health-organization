@@ -1,11 +1,29 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoIosMailUnread } from "react-icons/io";
 
 import logo from "../../assets/images/logo.png";
 
-import { Link } from "react-router-dom";
+const footerLinks = [
+  {
+    title: "Home",
+    link: "/",
+  },
+  {
+    title: "About Us",
+    link: "/about-us",
+  },
+  {
+    title: "Gallery",
+    link: "/gallery",
+  },
+  {
+    title: "Contact Us",
+    link: "/contact-us",
+  },
+];
 
 const Footer = () => {
   return (
@@ -60,6 +78,18 @@ const Footer = () => {
                     Notice
                   </Link>
                 </li>
+              <ul className="">
+                {footerLinks.map((link, ind) => (
+                  <li>
+                    <Link
+                      to={link.link}
+                      className="text-reset text-decoration-none"
+                      key={ind}
+                    >
+                      {link.title}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
             <div className="col-lg-4">
