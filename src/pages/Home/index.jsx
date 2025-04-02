@@ -6,6 +6,7 @@ import { HomeService } from "./components/HomeService";
 import { HomeTestimonial } from "./components/HomeTetimonial";
 import HomeGallery from "./components/HomeGallery";
 import { ScrollToTop } from "../../components/ScrollToTop";
+import HomeExperience from "./components/HomeExperience";
 
 export const Home = () => {
   return (
@@ -14,6 +15,7 @@ export const Home = () => {
       <HomeAbout />
       <HomeService />
       <HomeGallery />
+      <HomeExperience />
       <HomeTestimonial />
     </>
   );

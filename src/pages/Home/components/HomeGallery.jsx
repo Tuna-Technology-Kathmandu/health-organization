@@ -35,7 +35,7 @@ const HomeGallery = () => {
   const imageUrls = data?.page?.content ? extractImages(data.page.content) : [];
 
   return (
-    <div className="container border py-5">
+    <div className="container py-5">
       <h2>Our Gallery</h2>
       <div className="masonry-layout my-5">
         {imageUrls.length > 0 ? (
