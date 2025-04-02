@@ -21,32 +21,10 @@ export const HomeAbout = () => {
         <h3 className="mb-3">About Us</h3>
         <div className="row">
           <div className="col-lg-7">
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim
-              molestiae tempora iure numquam aspernatur, autem accusamus quod
-              corporis sapiente maxime? Excepturi inventore, recusandae ab
-              repellendus quisquam accusamus deserunt et harum. Lorem ipsum
-              dolor sit, amet consectetur adipisicing elit. Enim molestiae
-              tempora iure numquam aspernatur, autem accusamus quod corporis
-              sapiente maxime? Excepturi inventore, recusandae ab repellendus
-              quisquam accusamus deserunt et harum.
-            </p>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim
-              molestiae tempora iure numquam aspernatur, autem accusamus quod
-              corporis sapiente maxime? Excepturi inventore, recusandae ab
-              repellendus quisquam accusamus deserunt et harum. Lorem ipsum
-              dolor sit, amet consectetur adipisicing elit. Enim molestiae
-              tempora iure numquam aspernatur, autem accusamus quod corporis
-              sapiente maxime? Excepturi inventore, recusandae ab repellendus
-              quisquam accusamus deserunt et harum.
-            </p>
-            <Link to="about-us" className="btn btn-primary m-2">View More</Link>
-            <p className="lh-lg text-justify" 
+            <p
+              className="lh-lg text-justify"
               dangerouslySetInnerHTML={{ __html: data.miscellaneous.content }}
             />
-
-            <button className="btn btn-primary">View More</button>
           </div>
           <div className="col-lg-5">
             <img
@@ -55,7 +33,9 @@ export const HomeAbout = () => {
               className="img-fluid"
             />
           </div>
+          
         </div>
+        <Link to="about-us" className="btn btn-primary m-2 ">View More</Link>
       </div>
     </div>
   );

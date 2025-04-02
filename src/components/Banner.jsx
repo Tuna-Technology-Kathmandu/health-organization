@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Banner = ({ pageTitle }) => {
   const bannerStyle = {
-    height: "55vh",
+    height: "65vh",
     backgroundImage: `url('https://cdn.pixabay.com/photo/2016/11/06/10/35/hospital-1802680_1280.jpg')`,
     backgroundSize: "cover",
     backgroundPosition: "center",

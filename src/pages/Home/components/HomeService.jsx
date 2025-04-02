@@ -3,6 +3,7 @@ import { gql, useQuery } from "@apollo/client";
 
 import client from "../../../utils/ApolloClient";
 import { ServicePlaceholder } from "../../../assets/css/skelton/Service";
+import "../../../assets/css/ServiceCard.css";
 
 const GET_SERVICES = gql`
   query SERVICE {
@@ -33,7 +34,7 @@ export const HomeService = () => {
         <div className="row g-3">
           {data.services.nodes.map((item, index) => (
             <div className="col-lg-3 col-md-6 col-sm-12" key={index}>
-              <div className="card">
+              <div className="card hover-card">
                 <center>
                   <img
                     src={item.featuredImage.node.mediaItemUrl}

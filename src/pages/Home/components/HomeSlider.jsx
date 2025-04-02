@@ -39,16 +39,22 @@ export const HomeSlider = () => {
 
   return (
     <div className="slider-container">
+      <div style={{
+          background: "#3BBCF626"
+        }}>
+        <p className="scrolling-text d-flex justify-content-center align-items-center">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      </div>
       <Slider {...settings}>
         {images.map((item, index) => (
           <div key={index} className="slide">
             <div
-              className="slide-background"
+              className="slide-background img-fluid"
               style={{ backgroundImage: `url(${item.image})` }}
             >
               <div className="overlay"></div>
               <div className="content">
-                <h1>{item.title}</h1>
+                <h1 className="fw-bold fs-1 w-75 pb-4">{item.title}</h1>
                 <p>{item.description}</p>
                 <Link to="contact-us" className="btn text-white p-2 rounded bg-primary">Contact Us</Link>
               </div>
