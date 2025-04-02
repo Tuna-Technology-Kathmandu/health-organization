@@ -2,6 +2,7 @@ import { gql, useQuery } from "@apollo/client";
 import React from "react";
 
 import client from "../../utils/ApolloClient";
+import { MissionShimmer } from "../../assets/css/skelton/MissionShimmer";
 
 const GET_ITEM = gql(`query IMAGES {
   miscellaneous(id: "63", idType: DATABASE_ID) {
@@ -12,7 +13,7 @@ const GET_ITEM = gql(`query IMAGES {
 
 export const Mission = () => {
   let { loading, error, data } = useQuery(GET_ITEM, { client });
-  if (loading) return <p>Loading</p>;
+  if (loading) return <MissionShimmer /> ;
   if (error) return <p>Error</p>;
   return (
     <div className=" py-2 my-5 px-md-4 ms-2">
