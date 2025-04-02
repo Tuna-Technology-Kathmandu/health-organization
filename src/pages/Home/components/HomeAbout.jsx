@@ -9,6 +9,11 @@ const GET_ITEM = gql(`query IMAGES {
   miscellaneous(id: "75", idType: DATABASE_ID) {
     title
     content
+    featuredImage {
+      node {
+        mediaItemUrl
+      }
+    }
   }
 }`);
 
@@ -20,8 +25,8 @@ export const HomeAbout = () => {
     <div className="home-about-us">
       <div className="container py-5 my-5">
         <h3 className="mb-3">About Us</h3>
-        <div className="row">
-          <div className="col-lg-7">
+        <div className="row g-5">
+          <div className="col-lg-7 ">
             <p
               className="lh-lg text-justify"
               dangerouslySetInnerHTML={{ __html: data.miscellaneous.content }}
@@ -29,14 +34,15 @@ export const HomeAbout = () => {
           </div>
           <div className="col-lg-5">
             <img
-              src="https://placehold.co/600x400"
+              src={data?.miscellaneous?.featuredImage?.node?.mediaItemUrl}
               alt=""
               className="img-fluid"
             />
           </div>
-          
         </div>
-        <Link to="about-us" className="btn btn-primary m-2 ">View More</Link>
+        <Link to="about-us" className="btn btn-primary m-2 ">
+          View More
+        </Link>
       </div>
     </div>
   );

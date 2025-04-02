@@ -1,11 +1,11 @@
-.masonry-layout {
+/* .masonry-layout {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 10px;
   padding: 10px;
   grid-auto-rows: masonry;
   align-items: start;
-}
+} */
 
 .masonry-item {
   background: white;
@@ -18,4 +18,42 @@
   width: 100%;
   display: block;
   border-radius: 12px;
+}
+
+/* Gallery container layout */
+.masonry-layout {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: start;
+  grid-auto-rows: masonry;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+/* Each item in the masonry grid */
+.masonry-item {
+  flex: 1 0 30%;
+  margin-bottom: 16px;
+}
+
+/* Style for the gallery image */
+.gallery-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Optional: add responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .masonry-item {
+    flex: 1 0 48%; /* Two items per row */
+  }
+}
+
+@media (max-width: 480px) {
+  .masonry-item {
+    flex: 1 0 100%; /* One item per row */
+  }
 }
