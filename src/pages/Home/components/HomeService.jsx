@@ -44,9 +44,9 @@ export const HomeService = () => {
                   />
                 </center>
                 <div className="card-body">
-                  <h5 className="text-center">{item.title}</h5>
+                  <h5 className="fw-bold text-center">{item.title}</h5>
                   <p
-                    className=""
+                    className="p-1"
                     dangerouslySetInnerHTML={{ __html: item.excerpt }}
                   />
                 </div>

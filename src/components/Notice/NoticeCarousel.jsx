@@ -70,10 +70,10 @@ export const NoticeCarousel = () => {
 // Custom Arrows Component
 const CustomArrows = ({ onClick }) => (
   <div className="custom-arrow-container justify-content-between">
-    <button className="custom-arrow" onClick={() => onClick("prev")}>
+    <button className="custom-arrow rounded-4 text-white fw-bold" style={{ background:"#032B7F"}} onClick={() => onClick("prev")}>
       &#8592;
     </button>
-    <button className="custom-arrow" onClick={() => onClick("next")}>
+    <button className="custom-arrow rounded-4 text-white fw-bold" style={{ background:"#032B7F"}} onClick={() => onClick("next")}>
       &#8594;
     </button>
   </div>

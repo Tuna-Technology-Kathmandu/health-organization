@@ -2,6 +2,7 @@ import React from "react";
 import { gql, useQuery } from "@apollo/client";
 
 import client from "../../utils/ApolloClient";
+import '../../assets/css/ServiceCard.css'
 
 const GET_ITEMS = gql(`
     query IMAGES {
