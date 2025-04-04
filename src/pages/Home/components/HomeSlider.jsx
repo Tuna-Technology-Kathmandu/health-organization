@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import "../../../assets/css/HomeSlider.css";
 import client from "../../../utils/ApolloClient";
 import NoticeAction from "../../../actions/NoticeAction";
+import { HomeSliderShimmer } from "../../../assets/css/skelton/HomeSliderShimmer";
 
 const GET_HOME_EXPERIENCE = gql`
   query IMAGES($id: ID!) {
@@ -34,7 +35,7 @@ export const HomeSlider = () => {
       .catch((error) => console.error("Error fetching notices:", error));
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <HomeSliderShimmer />;
   if (error) return <div>Error: {error.message}</div>;
 
   const content = data?.miscellaneous?.content || "";
@@ -56,7 +57,7 @@ export const HomeSlider = () => {
         }}
       >
         <p
-          className="scrolling-text d-flex justify-content-center align-items-center"
+          className="scrolling-text d-flex "
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </div>

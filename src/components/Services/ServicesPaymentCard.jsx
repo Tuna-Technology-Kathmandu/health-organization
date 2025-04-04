@@ -1,6 +1,6 @@
 import React from "react";
 import { gql, useQuery } from "@apollo/client";
-import parse from "html-react-parser"; // Import html-react-parser
+import parse from "html-react-parser"; 
 import client from "../../utils/ApolloClient";
 
 const GET_ITEMS = gql`
