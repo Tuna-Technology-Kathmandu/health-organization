@@ -47,42 +47,58 @@ export const HomeSlider = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    arrows: window.innerWidth > 768,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          dots: true
+        }
+      }
+    ]
   };
 
   return (
     <div className="slider-container">
-      <div
-        style={{
-          background: "#3BBCF626",
-        }}
-      >
-        <p
-          className="scrolling-text d-flex "
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
+      {/* Marquee/Ticker Section */}
+      <div className="marquee-container py-2" style={{ background: "#3BBCF626" }}>
+        <div className="container">
+          <p 
+            className="scrolling-text text-center text-md-start"
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
+        </div>
       </div>
+
+      {/* Main Slider */}
       <Slider {...settings}>
         {sliderData.map((item, index) => {
-          const featuredImageUrl =
-            item._embedded["wp:featuredmedia"][0].source_url;
+          const featuredImageUrl = item._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+          if (!featuredImageUrl) return null;
+
           return (
             <div key={index} className="slide">
               <div
-                className="slide-background img-fluid"
+                className="slide-background"
                 style={{ backgroundImage: `url(${featuredImageUrl})` }}
               >
                 <div className="overlay"></div>
-                <div className="content">
-                  <h1 className="fw-bold fs-1 w-75 pb-4">
-                    {item?.title?.rendered}
-                  </h1>
-                  <p>{item.description}</p>
-                  <Link
-                    to={`/notice/details/${item.slug}`}
-                    className="btn text-white p-2 rounded bg-primary"
-                  >
-                    Read More{" "}
-                  </Link>
+                <div className="container h-100">
+                  <div className="content-wrapper h-100 d-flex flex-column justify-content-end pb-4 pb-lg-5">
+                    <div className="content">
+                      <h1 className="fw-bold display-5 display-lg-1 mb-3 mb-lg-4 w-100 w-lg-75">
+                        {item?.title?.rendered}
+                      </h1>
+                      <p className="d-none d-md-block mb-4">{item.description}</p>
+                      <Link
+                        to={`/notice/details/${item.slug}`}
+                        className="btn btn-primary text-white px-4 py-2 rounded"
+                      >
+                        Read More
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
