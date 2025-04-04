@@ -11,7 +11,7 @@ const Header = () => {
       <div className="d-none d-md-flex justify-content-between border-bottom px-3 px-lg-5 py-2 bg-light">
         <div className="p-2 d-flex align-items-center">
           <MdOutlineEmail className="text-primary" />
-          <span className="ms-2 font-monospace small">info@allnepalclinic.com</span>
+          <span className="ms-2 font-monospace small text-truncate">info@allnepalclinic.com</span>
         </div>
         <div className="p-2 d-flex align-items-center">
           <span className="me-2 text-muted small">Follow us:</span>
@@ -33,7 +33,7 @@ const Header = () => {
       </div>
 
       {/* Main Navbar */}
-      <nav className="navbar navbar-expand-lg bg-white shadow-sm px-3 px-lg-5 py-2 py-lg-3">
+      <nav className="navbar navbar-expand-lg bg-white shadow-sm px-3 px-lg-5 py-2">
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             <img
@@ -44,7 +44,7 @@ const Header = () => {
             />
           </Link>
           <button
-            className="navbar-toggler"
+            className="navbar-toggler border-0"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -55,7 +55,7 @@ const Header = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto align-items-lg-center">
+            <ul className="navbar-nav ms-auto align-items-center">
               <li className="nav-item">
                 <Link className="nav-link text-dark px-2 px-lg-3" to="/">
                   HOME
@@ -64,30 +64,30 @@ const Header = () => {
               <li className="nav-item d-none d-lg-block px-1 px-lg-2 text-secondary">|</li>
               <li className="nav-item">
                 <Link className="nav-link text-dark px-2 px-lg-3" to="/about-us">
-                  ABOUT US
+                  ABOUT
                 </Link>
               </li>
-              <li className="nav-item d-none d-lg-block px-1 px-lg-2 px-md-1 text-secondary">|</li>
+              <li className="nav-item d-none d-lg-block px-1 px-lg-2 text-secondary">|</li>
               <li className="nav-item">
-                <Link className="nav-link text-dark px-2 px-lg-3 px-md-1" to="/service">
-                  FACILITIES & SERVICES
+                <Link className="nav-link text-dark px-2 px-lg-3" to="/service">
+                  <span className="d-none d-md-inline">FACILITIES & </span>SERVICES
                 </Link>
               </li>
-              <li className="nav-item d-none d-lg-block px-1 px-lg-2 px-md-1 text-secondary">|</li>
+              <li className="nav-item d-none d-lg-block px-1 px-lg-2 text-secondary">|</li>
               <li className="nav-item">
-                <Link className="nav-link text-dark px-2 px-lg-3 px-md-1" to="/gallery">
+                <Link className="nav-link text-dark px-2 px-lg-3" to="/gallery">
                   GALLERY
                 </Link>
               </li>
-              <li className="nav-item d-none d-lg-block px-1 px-md-1 px-lg-2 text-secondary">|</li>
+              <li className="nav-item d-none d-lg-block px-1 px-lg-2 text-secondary">|</li>
               <li className="nav-item">
-                <Link className="nav-link text-dark px-2 px-lg-3 px-md-1" to="/contact-us">
-                  CONTACT US
+                <Link className="nav-link text-dark px-2 px-lg-3" to="/contact-us">
+                  CONTACT
                 </Link>
               </li>
-              <li className="nav-item d-none d-lg-block px-1 px-lg-2 px-md-1 text-secondary">|</li>
+              <li className="nav-item d-none d-lg-block px-1 px-lg-2 text-secondary">|</li>
               <li className="nav-item">
-                <Link className="nav-link text-dark px-2 px-lg-3 px-md-1" to="/notice">
+                <Link className="nav-link text-dark px-2 px-lg-3" to="/notice">
                   NOTICE
                 </Link>
               </li>
