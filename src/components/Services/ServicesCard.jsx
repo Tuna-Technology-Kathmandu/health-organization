@@ -2,10 +2,11 @@ import React from "react";
 import { gql, useQuery } from "@apollo/client";
 
 import client from "../../utils/ApolloClient";
-import '../../assets/css/ServiceCard.css'
+import '../../assets/css/ServiceCard.css';
+import { ServicePlaceholder } from "../../assets/css/skelton/Service";
 
 const GET_ITEMS = gql(`
-    query IMAGES {
+  query IMAGES {
   services {
     nodes {
       title
@@ -22,7 +23,7 @@ const GET_ITEMS = gql(`
 export const ServicesCard = () => {
   const { loading, error, data } = useQuery(GET_ITEMS, { client });
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p><ServicePlaceholder/> </p>;
   if (error) return <p>Error: {error.message}</p>;
   return (
     <div className="row g-4 my-3">
@@ -33,7 +34,8 @@ export const ServicesCard = () => {
               <img
                 src={item.featuredImage.node.mediaItemUrl}
                 alt={item.title}
-                className="my-3 w-50"
+                className="my-3 rounded-circle"
+                style={{width: 150, height: 150}}
               />
             </center>
             <div className="card-body text-center mt-4">
