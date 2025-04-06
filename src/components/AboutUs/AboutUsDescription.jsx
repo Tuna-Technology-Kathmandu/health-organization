@@ -17,9 +17,9 @@ export const AboutUsDescription = () => {
   if (error) return <p>Error</p>;
 
   return (
-    <div className=" py-2 my-5 px-md-4 ms-2 w-100">
+    <div className=" py-2 px-3 my-5 px-md-4 ms-2 w-100">
       <h2 className="mb-3">{data.miscellaneous.title}</h2>
-      <div className="row d-flex align-items-between justify-content-between g-3">
+      <div className="row d-flex align-items-between justify-content-between g-5">
         <div className="col-lg-7 col-md-12 d-flex flex-wrap">
           <p
             className="lh-lg text-justify"

@@ -39,14 +39,14 @@ export const HomeService = () => {
                   <img
                     src={item.featuredImage.node.mediaItemUrl}
                     alt={item.title}
-                    className="img-fluid my-3"
-                    style={{ width: 150 }}
+                    className="img-fluid my-3 rounded-circle"
+                    style={{ width: 150, height: 150 }}
                   />
                 </center>
                 <div className="card-body">
-                  <h5 className="text-center">{item.title}</h5>
+                  <h5 className="fw-bold text-center">{item.title}</h5>
                   <p
-                    className=""
+                    className="p-1"
                     dangerouslySetInnerHTML={{ __html: item.excerpt }}
                   />
                 </div>

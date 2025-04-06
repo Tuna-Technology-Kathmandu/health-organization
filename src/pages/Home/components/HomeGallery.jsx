@@ -21,7 +21,7 @@ const GET_GALLERY_IMAGES = gql`
   }
 `;
 
-const HomeGallery = () => {
+export const HomeGallery = () => {
 
   const { loading, error, data } = useQuery(GET_GALLERY_IMAGES, {
     client,
@@ -35,7 +35,7 @@ const HomeGallery = () => {
   const imageUrls = data?.page?.content ? extractImages(data.page.content) : [];
 
   return (
-    <div className="container border py-5">
+    <div className="container py-5">
       <h2>Our Gallery</h2>
       <div className="masonry-layout my-5">
         {imageUrls.length > 0 ? (
@@ -66,5 +66,3 @@ const HomeGallery = () => {
     </div>
   );
 };
-
-export default HomeGallery;

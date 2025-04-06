@@ -1,34 +1,60 @@
-import React from "react";
-//import axios from "axios";
+import React, { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
-import Layout from "./Layout";
-import { Home } from "./pages/Home/index";
-import { Gallery } from "./pages/Gallery/Gallery";
-import { Notice } from "./pages/Notice/Notice";
-import { Services } from "./pages/Services/Services";
-import Contactus from "./pages/ContactUs/Contact";
 
+import Layout from "./Layout";
 import "./App.css";
-import Aboutus from "./pages/AboutUs/Aboutus";
-import NoticeDetails from "../src/pages/Notice/NoticeDetails";
+
+const Home = lazy(() =>
+  import("./pages/Home/index").then((m) => ({ default: m.Home }))
+);
+const Gallery = lazy(() =>
+  import("./pages/Gallery/Gallery").then((m) => ({ default: m.Gallery }))
+);
+const Notice = lazy(() =>
+  import("./pages/Notice/Notice").then((m) => ({ default: m.Notice }))
+);
+const NoticeDetails = lazy(() =>
+  import("./pages/Notice/NoticeDetails").then((m) => ({
+    default: m.NoticeDetails,
+  }))
+);
+const Services = lazy(() =>
+  import("./pages/Services/Services").then((m) => ({ default: m.Services }))
+);
+const Contactus = lazy(() =>
+  import("./pages/ContactUs/Contact").then((m) => ({ default: m.Contactus }))
+);
+const Aboutus = lazy(() =>
+  import("./pages/AboutUs/Aboutus").then((m) => ({ default: m.Aboutus }))
+);
 
 function App() {
-  // axios.defaults.url = import.meta.env.base_url;
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="/gallery" element={<Gallery />} />
+    <Suspense
+      fallback={
+        <div className="d-flex justify-content-center align-items-center vh-100">
+          <div className="spinner-border text-primary" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      }
+    >
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/gallery" element={<Gallery />} />
 
-        <Route path="/notice">
-          <Route index element={<Notice />} />
-          <Route path="details/:slug" element={<NoticeDetails />}/>
+          <Route path="/notice">
+            <Route index element={<Notice />} />
+            <Route path="details/:slug" element={<NoticeDetails />} />
+          </Route>
+
+          <Route path="/service" element={<Services />} />
+          <Route path="/contact-us" element={<Contactus />} />
+          <Route path="about-us" element={<Aboutus />} />
         </Route>
-        <Route path="/service" element={<Services />} />
-        <Route path="/contact-us" element={<Contactus />} />
-        <Route path="about-us" element={<Aboutus />} />
-      </Route>
-    </Routes>
+      </Routes>
+    </Suspense>
   );
 }
 

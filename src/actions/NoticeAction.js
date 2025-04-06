@@ -2,7 +2,7 @@ import ApiClient from "./BaseAction";
 
 class NoticesApi extends ApiClient {
   constructor() {
-    super("http://localhost:10003/wp-json/wp/v2");
+    super("https://cms.allnepalclinic.com/wp-json/wp/v2");
   }
 
   getNotices() {
