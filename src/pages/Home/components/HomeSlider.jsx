@@ -53,19 +53,22 @@ export const HomeSlider = () => {
         breakpoint: 768,
         settings: {
           arrows: false,
-          dots: true
-        }
-      }
-    ]
+          dots: true,
+        },
+      },
+    ],
   };
 
   return (
     <div className="slider-container">
       {/* Marquee/Ticker Section */}
-      <div className="marquee-container py-2" style={{ background: "#3BBCF626" }}>
+      <div
+        className="marquee-container py-2 d-flex align-items-center"
+        style={{ background: "#3BBCF626", minHeight: "32px" }}
+      >
         <div className="container">
-          <p 
-            className="scrolling-text text-center text-md-start"
+          <p
+            className="scrolling-text text-center m-0"
             dangerouslySetInnerHTML={{ __html: content }}
           />
         </div>
@@ -74,7 +77,8 @@ export const HomeSlider = () => {
       {/* Main Slider */}
       <Slider {...settings}>
         {sliderData.map((item, index) => {
-          const featuredImageUrl = item._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+          const featuredImageUrl =
+            item._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
           if (!featuredImageUrl) return null;
 
           return (
@@ -90,7 +94,9 @@ export const HomeSlider = () => {
                       <h1 className="fw-bold display-5 display-lg-1 mb-3 mb-lg-4 w-100 w-lg-75">
                         {item?.title?.rendered}
                       </h1>
-                      <p className="d-none d-md-block mb-4">{item.description}</p>
+                      <p className="d-none d-md-block mb-4">
+                        {item.description}
+                      </p>
                       <Link
                         to={`/notice/details/${item.slug}`}
                         className="btn btn-primary text-white px-4 py-2 rounded"
