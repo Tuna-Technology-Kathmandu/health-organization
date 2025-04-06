@@ -11,7 +11,7 @@ const GET_HOME_EXPERIENCE = gql`
   }
 `;
 
-const HomeExperience = () => {
+export const HomeExperience = () => {
   const { loading, error, data } = useQuery(GET_HOME_EXPERIENCE, {
     client,
     variables: { id: "home-counter" },
@@ -56,4 +56,3 @@ const HomeExperience = () => {
   );
 };
 
-export default HomeExperience;
