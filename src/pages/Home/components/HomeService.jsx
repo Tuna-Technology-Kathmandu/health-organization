@@ -47,7 +47,9 @@ export const HomeService = () => {
                   <h5 className="fw-bold text-center">{item.title}</h5>
                   <p
                     className="p-1"
-                    dangerouslySetInnerHTML={{ __html: item.excerpt }}
+                    dangerouslySetInnerHTML={{
+                      __html: item.excerpt ? item.excerpt.substring(0, 50) : "",
+                    }}
                   />
                 </div>
               </div>
