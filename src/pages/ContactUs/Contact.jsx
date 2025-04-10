@@ -5,7 +5,7 @@ import { BsFillTelephoneForwardFill } from "react-icons/bs";
 import { TbDeviceLandlinePhone } from "react-icons/tb";
 import { IoMdMail } from "react-icons/io";
 
-const Contactus = () => {
+export const Contactus = () => {
   return (
     <>
     <Banner pageTitle="Get In Touch"
@@ -138,4 +138,3 @@ const Contactus = () => {
   );
 };
 
-export default Contactus;

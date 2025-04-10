@@ -21,7 +21,7 @@ const GET_GALLERY_IMAGES = gql`
   }
 `;
 
-const HomeGallery = () => {
+export const HomeGallery = () => {
 
   const { loading, error, data } = useQuery(GET_GALLERY_IMAGES, {
     client,
@@ -66,5 +66,3 @@ const HomeGallery = () => {
     </div>
   );
 };
-
-export default HomeGallery;

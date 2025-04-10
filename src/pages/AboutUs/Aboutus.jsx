@@ -5,7 +5,7 @@ import ClinicBranch from "../../components/AboutUs/ClinicBranch";
 import { AboutUsDescription } from "../../components/AboutUs/AboutUsDescription";
 import { Mission } from "../../components/AboutUs/Mission";
 
-const Aboutus = () => {
+export const Aboutus = () => {
   return (
     <>
       <Banner pageTitle="About Us" />
@@ -19,5 +19,3 @@ const Aboutus = () => {
     </>
   );
 };
-
-export default Aboutus;
