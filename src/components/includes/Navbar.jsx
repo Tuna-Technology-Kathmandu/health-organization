@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaFacebook, FaTwitter } from "react-icons/fa";
 import logo from "../../assets/images/logo.png";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    // Remove the 'show' class from the navbar collapse element
+    document.getElementById("navbarNav").classList.remove("show");
+  };
+
   return (
     <div>
       {/* Top Bar - Hidden on small screens */}
@@ -46,51 +54,40 @@ const Header = () => {
           <button
             className="navbar-toggler border-0"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-expanded={isMenuOpen}
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
+          <div 
+            className={`collapse navbar-collapse ${isMenuOpen ? "show" : ""}`}
+            id="navbarNav"
+          >
             <ul className="navbar-nav ms-auto align-items-center">
-              <li className="nav-item">
-                <Link className="nav-link text-dark px-2 px-lg-3" to="/">
-                  HOME
-                </Link>
-              </li>
-              <li className="nav-item d-none d-lg-block px-1 px-lg-2 text-secondary">|</li>
-              <li className="nav-item">
-                <Link className="nav-link text-dark px-2 px-lg-3" to="/about-us">
-                  ABOUT
-                </Link>
-              </li>
-              <li className="nav-item d-none d-lg-block px-1 px-lg-2 text-secondary">|</li>
-              <li className="nav-item">
-                <Link className="nav-link text-dark px-2 px-lg-3" to="/service">
-                  <span className="d-none d-md-inline">FACILITIES & </span>SERVICES
-                </Link>
-              </li>
-              <li className="nav-item d-none d-lg-block px-1 px-lg-2 text-secondary">|</li>
-              <li className="nav-item">
-                <Link className="nav-link text-dark px-2 px-lg-3" to="/gallery">
-                  GALLERY
-                </Link>
-              </li>
-              <li className="nav-item d-none d-lg-block px-1 px-lg-2 text-secondary">|</li>
-              <li className="nav-item">
-                <Link className="nav-link text-dark px-2 px-lg-3" to="/contact-us">
-                  CONTACT
-                </Link>
-              </li>
-              <li className="nav-item d-none d-lg-block px-1 px-lg-2 text-secondary">|</li>
-              <li className="nav-item">
-                <Link className="nav-link text-dark px-2 px-lg-3" to="/notice">
-                  NOTICE
-                </Link>
-              </li>
+              {[
+                { path: "/", text: "HOME" },
+                { path: "/about-us", text: "ABOUT" },
+                { path: "/service", text: (<><span className="d-none d-md-inline">FACILITIES & </span>SERVICES</>) },
+                { path: "/gallery", text: "GALLERY" },
+                { path: "/contact-us", text: "CONTACT" },
+                { path: "/notice", text: "NOTICE" }
+              ].map((item, index) => (
+                <React.Fragment key={item.path}>
+                  <li className="nav-item">
+                    <Link 
+                      className="nav-link text-dark px-2 px-lg-3" 
+                      to={item.path}
+                      onClick={closeMenu}
+                    >
+                      {item.text}
+                    </Link>
+                  </li>
+                  {index < 5 && (
+                    <li className="nav-item d-none d-lg-block px-1 px-lg-2 text-secondary">|</li>
+                  )}
+                </React.Fragment>
+              ))}
             </ul>
           </div>
         </div>

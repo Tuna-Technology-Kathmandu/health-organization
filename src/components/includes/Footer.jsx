@@ -110,10 +110,10 @@ const Footer = () => {
         </div>
       </div>
       <div
-        className="text-white footer-bottom p-2"
+        className="text-white footer-bottom"
         style={{ background: "#032B7FCC" }}
       >
-        <p className="d-flex justify-content-center align-items-center">
+        <p className="d-flex justify-content-center align-items-center p-2">
           Copyright &copy; 2024. All Nepal Health Care Treatment Clinic
         </p>
       </div>
