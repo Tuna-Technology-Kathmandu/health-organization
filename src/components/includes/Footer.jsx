@@ -9,7 +9,10 @@ import SocialMedia from "./SocialMedia";
 const Footer = () => {
   return (
     <>
-      <div className="footer-container pt-5 px-4" style={{ background: "#3BBCF659" }}>
+      <div
+        className="footer-container pt-5 px-4"
+        style={{ background: "#3BBCF659" }}
+      >
         <div className="">
           <div className="row">
             <div className=" col-lg-2 ">
@@ -19,12 +22,13 @@ const Footer = () => {
                   alt="all-nepal-health-treatment-clinic"
                   className="img-fluid"
                 />
-                <h5 className="mt-3 fs-6 fw-bold">All Nepal Health Treatment Clinic</h5>
-               
+                <h5 className="mt-3 fs-6 fw-bold">
+                  All Nepal Health Treatment Clinic
+                </h5>
               </center>
-              <div className=" px-4 d-flex justify-content-center" >
+              <div className=" px-4 d-flex justify-content-center">
                 <SocialMedia />
-                </div>
+              </div>
             </div>
             <div className="col-lg-2">
               <h5 className="mt-2 fw-bold">Links</h5>
@@ -35,22 +39,34 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li className="text-black mb-3">
-                  <Link to="/about-us" className="text-decoration-none text-black">
+                  <Link
+                    to="/about-us"
+                    className="text-decoration-none text-black"
+                  >
                     About Us
                   </Link>
                 </li>
                 <li className="text-black mb-3">
-                  <Link to="/gallery" className="text-decoration-none text-black">
+                  <Link
+                    to="/gallery"
+                    className="text-decoration-none text-black"
+                  >
                     Gallery
                   </Link>
                 </li>
                 <li className="text-black mb-3">
-                  <Link to="/service" className="text-decoration-none text-black">
+                  <Link
+                    to="/service"
+                    className="text-decoration-none text-black"
+                  >
                     Our Services
                   </Link>
                 </li>
                 <li className="text-black mb-3">
-                  <Link to="/contact-us" className="text-decoration-none text-black">
+                  <Link
+                    to="/contact-us"
+                    className="text-decoration-none text-black"
+                  >
                     Contact Us
                   </Link>
                 </li>
@@ -62,7 +78,8 @@ const Footer = () => {
                 <FaPhoneAlt size={18} />{" "}
                 <a
                   href="tel:+9778899809"
-                  className="ms-3 text-decoration-none text-dark">
+                  className="ms-3 text-decoration-none text-dark"
+                >
                   9778899809
                 </a>
               </p>
@@ -92,10 +109,13 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="text-white footer-bottom py-1" style={{ background: "#032B7FCC" }}>
-        <center>
-          <p className="">Copyright &copy; 2024. All Nepal Health Care Treatment Clinic</p>
-        </center>
+      <div
+        className="text-white footer-bottom p-2"
+        style={{ background: "#032B7FCC" }}
+      >
+        <p className="d-flex justify-content-center align-items-center">
+          Copyright &copy; 2024. All Nepal Health Care Treatment Clinic
+        </p>
       </div>
     </>
   );

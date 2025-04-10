@@ -34,7 +34,7 @@ export const HomeService = () => {
         <div className="row g-3">
           {data.services.nodes.map((item, index) => (
             <div className="col-lg-3 col-md-6 col-sm-12" key={index}>
-              <div className="card hover-card">
+              <div className="card hover-card" style={{ height: 380 }}>
                 <center>
                   <img
                     src={item.featuredImage.node.mediaItemUrl}
@@ -46,9 +46,9 @@ export const HomeService = () => {
                 <div className="card-body">
                   <h5 className="fw-bold text-center">{item.title}</h5>
                   <p
-                    className="p-1"
+                    className="p-1 text-center"
                     dangerouslySetInnerHTML={{
-                      __html: item.excerpt ? item.excerpt.substring(0, 50) : "",
+                      __html: item.excerpt ? item.excerpt.substring(0, 120) + "..." : "",
                     }}
                   />
                 </div>

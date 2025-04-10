@@ -11,6 +11,7 @@ const GET_TESTIMONIALS = gql`
   query TESTIMONIALS {
     testimonials {
       nodes {
+        id
         title
         excerpt
         featuredImage {
@@ -114,42 +115,59 @@ export const HomeTestimonial = () => {
                   display: "flex",
                   flexDirection: "column",
                   height: "100%",
+                  minHeight: "250px",
                 }}
               >
                 <div
                   style={{
                     display: "flex",
-                    alignItems: "center",
+                    alignItems: "flex-start",
                     justifyContent: "space-between",
                     marginBottom: "15px",
-                    padding: "16px",
                   }}
                 >
                   <div style={{ display: "flex", alignItems: "center" }}>
-                    <img
-                      src={testimonial.featuredImage.node.mediaItemUrl}
-                      alt={testimonial.title}
-                      style={{
-                        width: "40px",
-                        height: "40px",
-                        borderRadius: "50%",
-                        marginRight: "10px",
-                      }}
-                    />
+                    {testimonial.featuredImage?.node?.mediaItemUrl && (
+                      <img
+                        src={testimonial.featuredImage.node.mediaItemUrl}
+                        alt={testimonial.title}
+                        style={{
+                          width: "40px",
+                          height: "40px",
+                          borderRadius: "50%",
+                          marginRight: "10px",
+                          objectFit: "cover",
+                        }}
+                      />
+                    )}
                     <h6 style={{ margin: 0, fontSize: "16px" }}>
                       {testimonial.title}
                     </h6>
                   </div>
-                  <span style={{ fontSize: "32px", fontWeight: "bold" }}>
+                  <span style={{ fontSize: "32px", fontWeight: "bold", lineHeight: "0.5" }}>
                     &quot;
                   </span>
                 </div>
 
                 {/* Testimonial Text */}
-                <p
-                  style={{ fontSize: "14px", lineHeight: "1.6", margin: 0 }}
-                  dangerouslySetInnerHTML={{ __html: testimonial.excerpt }}
-                />
+                <div
+                  style={{
+                    flex: 1,
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontSize: "14px",
+                      lineHeight: "1.6",
+                      margin: 0,
+                      flex: 1,
+                    }}
+                    dangerouslySetInnerHTML={{ __html: testimonial.excerpt }}
+                  />
+                </div>
               </div>
             </div>
           ))}
