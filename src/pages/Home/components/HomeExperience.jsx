@@ -1,6 +1,7 @@
 import React from "react";
 import { gql, useQuery } from "@apollo/client";
 import client from "../../../utils/ApolloClient";
+import { HomeExperienceShimmer } from "../../../assets/css/skelton/HomeExperienceShimmer";
 
 const GET_HOME_EXPERIENCE = gql`
   query IMAGES($id: ID!) {
@@ -17,11 +18,11 @@ export const HomeExperience = () => {
     variables: { id: "home-counter" },
   });
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <HomeExperienceShimmer />;
   if (error) return <div>Error: {error.message}</div>;
 
   const content = data?.miscellaneous?.content || "";
-  
+
   // Extract table data dynamically
   const extractTableData = (htmlContent) => {
     const parser = new DOMParser();
@@ -30,8 +31,12 @@ export const HomeExperience = () => {
 
     if (rows.length < 2) return [];
 
-    const headers = Array.from(rows[0].querySelectorAll("td")).map(td => td.textContent.trim());
-    const values = Array.from(rows[1].querySelectorAll("td")).map(td => td.textContent.trim());
+    const headers = Array.from(rows[0].querySelectorAll("td")).map((td) =>
+      td.textContent.trim()
+    );
+    const values = Array.from(rows[1].querySelectorAll("td")).map((td) =>
+      td.textContent.trim()
+    );
 
     return headers.map((header, index) => ({
       title: header,
@@ -42,12 +47,12 @@ export const HomeExperience = () => {
   const stats = extractTableData(content);
 
   return (
-    <div
-      className="d-flex p-5 flex-wrap"
-      style={{ background: "#F4F3F1" }}
-    >
+    <div className="d-flex p-5 flex-wrap" style={{ background: "#F4F3F1" }}>
       {stats.map((stat, index) => (
-        <div key={index} className="col-lg-3 col-md-3 col-3 text-center fw-bold">
+        <div
+          key={index}
+          className="col-lg-3 col-md-3 col-3 text-center fw-bold"
+        >
           <span>{stat.value}+</span>
           <p>{stat.title}</p>
         </div>
@@ -55,4 +60,3 @@ export const HomeExperience = () => {
     </div>
   );
 };
-

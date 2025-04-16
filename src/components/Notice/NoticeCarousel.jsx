@@ -3,6 +3,7 @@ import Slider from "react-slick";
 
 import NoticeAction from "../../actions/NoticeAction";
 import "../../assets/css/Notice.css";
+import { Link } from "react-router-dom";
 
 export const NoticeCarousel = () => {
   const [data, setData] = useState([]);
@@ -84,12 +85,14 @@ export const NoticeCarousel = () => {
                   Featured Information
                 </div>
                 <div className="p-2">
-                  <h4>{item.title.rendered}</h4>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: item.excerpt.rendered,
-                    }}
-                  />
+                  <Link to={`details/${item.slug}`} className="text-decoration-none text-white">
+                    <h4>{item.title.rendered}</h4>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: item.excerpt.rendered,
+                      }}
+                    />
+                  </Link>
                 </div>
               </div>
             </div>
