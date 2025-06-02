@@ -21,15 +21,15 @@ export const Services = () => {
           fontFamily: "Poppins",
         }}
       >
-        <h4 className="text-center fw-bold mt-3">
+        <p className="text-center fw-bold fs-4 mt-5">
           The perfect plan for your need
-        </h4>
+        </p>
         <p className="text-center mt-3">
           We provide healthcare plans designed to keep students healthy and safe
           with the right medical support.
         </p>
         <div className="on-off-toggle d-flex justify-content-center pb-4">
-          <div className="d-flex align-items-center gap-3">
+          <div className="d-flex align-items-center gap-3 mb-4">
             <span
               className={`fw-bold ${!isYearly ? "text-dark" : "text-muted"}`}
             >
@@ -72,8 +72,8 @@ export const Services = () => {
         </div>
         < ServicesPaymentCard />
       </div>
-      <div className="container my-5">
-        <h4 className="text-center">Additional Services</h4>
+      <div className="container-fluid my-5">
+        <p className="text-center fw-bold fs-4">Additional Services</p>
         <ServicesCard />
       </div>
     </div>

@@ -34,15 +34,16 @@ export const Contactus = () => {
       fontFamily: "Poppins",
     }}
   >
-    <div className="py-5 mx-4 w-100 w-lg-50">
+    <div className="py-5 mx-4 w-full ">
       <h4 className="d-flex text-white justify-content-center align-items-center">
         Contact Information
       </h4>
       <p
-        className="text-white pt-2"
+        className="text-white pt-2 "
         style={{
-          width: "350px",
+          width: "360px",
           textAlign: "center",
+          justifyContent:"center"
         }}
       >
         Feel free to contact us through your preferred method. We're here
@@ -55,14 +56,14 @@ export const Contactus = () => {
         }}
       >
         <p>
-          <IoLocationSharp size={25} /> {"  "}
+          <IoLocationSharp size={20} /> {"  "}
           Nagarjun - 01, Raniban, Kathmandu
         </p>
         <p>
-          <TbDeviceLandlinePhone size={25} /> +977 - 1- 4950371
+          <TbDeviceLandlinePhone size={20} /> +977 - 1- 4950371
         </p>
         <p className="">
-          <BsFillTelephoneForwardFill size={25} /> <br />
+          <BsFillTelephoneForwardFill size={20} /> <br />
           <div className="mx-4 px-2" style={{
             marginTop:"-30px"
           }}>
@@ -70,13 +71,15 @@ export const Contactus = () => {
             +977 9761647716 <br /> +977 9761647649{" "}
           </div>
         </p>
-        <p>
-          <IoMdMail size={25} />{" "}
-          <a className="fw-medium" href="mailto:info@allnepalhealtreatment.com">allnepalhealthtreatmentclinic@gmail.com</a>
+        <p className="d-flex gap-2 align-items-center">
+          <IoMdMail size={20} />
+          <a className="fw-medium text-decoration-none text-white fw-bold hover:text-black" href="mailto:info@allnepalhealtreatment.com" style={{fontSize:"16px"}}>allnepalhealthtreatmentclinic@gmail.com</a>
         </p>
       </div>
     </div>
   </div>
+  
+  {/* contact form */}
   <div className="contact-form d-flex h-100 h-lg-50 h-sm-25 text-black justify-content-center align-items-center w-100 w-lg-50">
     <form
       className=" px-4 w-100 "
@@ -124,7 +127,7 @@ export const Contactus = () => {
         <textarea
           className="form-control"
           id="message"
-          rows="4"
+          rows="5"
           placeholder="Message"
         ></textarea>
       </div>

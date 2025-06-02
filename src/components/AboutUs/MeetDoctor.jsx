@@ -32,13 +32,13 @@ const MeetDoctor = () => {
           background: "#F4F3F1",
         }}
       >
-        <div className=" py-5 mx-4">
+        <div className=" py-5 mx-md-4 mx-2">
           <div className="ms-3">
-            <h3 className="pb-4">Meet our Doctors</h3>
+            <p className="pb-3 fs-4 fw-bold">Meet our Doctors</p>
             <div className="row">
               {data.teams.nodes.map((item, index) => (
                 <div
-                  className="col-lg-3 col-md-6 col-sm-6 rounded-2"
+                  className="col-lg-3 col-md-4 col-sm-6 rounded-2"
                   key={index}
                 >
                   <div
@@ -60,7 +60,7 @@ const MeetDoctor = () => {
                       />
                     </center>
                     <div className="card-body">
-                      <h4 className="text-center">{item.title}</h4>
+                      <h6 className="text-center fw-bold">{item.title}</h6>
                     </div>
                   </div>
                 </div>

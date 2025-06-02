@@ -49,11 +49,11 @@ export const NoticeCard = () => {
     <>
       {data.notices.nodes.map((item, index) => (
         <div key={index}>
-          <Link to={`details/${item.slug}`} className="d-flex flex-row mb-3">
+          <Link to={`details/${item.slug}`} className="d-flex flex-row mb-3 card p-3 text-decoration-none rounded-4 links-items " style={{color:"blue"}}>
             <div className="p-4">
               <FiLink />
             </div>
-            <div className="p-2">
+            <div className="p-2 ">
               <h6>{item?.title || ""}</h6>
               <p>{new Date(item.date).toDateString()}</p>
             </div>

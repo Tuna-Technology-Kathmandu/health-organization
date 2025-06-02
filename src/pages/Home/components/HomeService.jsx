@@ -4,6 +4,7 @@ import { gql, useQuery } from "@apollo/client";
 import client from "../../../utils/ApolloClient";
 import { ServicePlaceholder } from "../../../assets/css/skelton/Service";
 import "../../../assets/css/ServiceCard.css";
+import { motion } from 'framer-motion'
 
 const GET_SERVICES = gql`
   query SERVICE {
@@ -29,12 +30,14 @@ export const HomeService = () => {
 
   return (
     <div className="home-about-us" style={{ background: "#F4F3F1" }}>
-      <div className="container py-5">
-        <h3 className="mb-3">Our Services</h3>
-        <div className="row g-3">
+      <div className="container-fluid py-5">
+        <p className="mb-3 mb-5 fw-bold fs-4">Our Services</p>
+        <div className="row g-3 ">
           {data.services.nodes.map((item, index) => (
             <div className="col-lg-3 col-md-6 col-sm-12" key={index}>
-              <div className="card hover-card">
+              <motion.div className="card h-100 "
+               whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.9 }}>
                 <center>
                   <img
                     src={item.featuredImage.node.mediaItemUrl}
@@ -44,13 +47,13 @@ export const HomeService = () => {
                   />
                 </center>
                 <div className="card-body">
-                  <h5 className="fw-bold text-center">{item.title}</h5>
+                  <p className="fw-bold text-center" style={{ fontSize: '18px' }}>{item.title}</p>
                   <p
-                    className="p-1"
+                    className="text-center"  style={{ fontSize: '12px' }}
                     dangerouslySetInnerHTML={{ __html: item.excerpt }}
                   />
                 </div>
-              </div>
+              </motion.div>
             </div>
           ))}
         </div>

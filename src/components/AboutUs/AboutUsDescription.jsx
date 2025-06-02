@@ -17,10 +17,10 @@ export const AboutUsDescription = () => {
   if (error) return <p>Error</p>;
 
   return (
-    <div className=" py-2 px-3 my-5 px-md-4 ms-2 w-100">
-      <h2 className="mb-3">{data.miscellaneous.title}</h2>
-      <div className="row d-flex align-items-between justify-content-between g-5">
-        <div className="col-lg-7 col-md-12 d-flex flex-wrap">
+    <div className=" py-2 px-3 my-5 px-md-4 ms-2">
+      <p className="pb-3 fs-4 fw-bold">{data.miscellaneous.title}</p>
+      <div className="row d-flex align-items-center justify-content-center ">
+        <div className="col-lg-7 col-md-12 d-flex flex-wrap ">
           <p
             className="lh-lg text-justify"
             dangerouslySetInnerHTML={{ __html: data.miscellaneous.content }}

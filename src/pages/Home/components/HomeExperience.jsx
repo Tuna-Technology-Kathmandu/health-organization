@@ -43,13 +43,13 @@ export const HomeExperience = () => {
 
   return (
     <div
-      className="d-flex p-5 flex-wrap"
+      className="d-flex py-lg-5 py-4 flex-wrap"
       style={{ background: "#F4F3F1" }}
     >
       {stats.map((stat, index) => (
         <div key={index} className="col-lg-3 col-md-3 col-3 text-center fw-bold">
-          <span>{stat.value}+</span>
-          <p>{stat.title}</p>
+          <span>{stat.value} +</span>
+          <p className="mt-lg-4 mt-3">{stat.title}</p>
         </div>
       ))}
     </div>

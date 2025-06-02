@@ -3,6 +3,7 @@ import { gql, useQuery } from "@apollo/client";
 
 import client from "../../utils/ApolloClient";
 import { ClinicBranchShimmer } from "../../assets/css/skelton/ClinicBranchShimmer";
+import Marquee from "react-fast-marquee";
 
 const GET_ITEMS = gql(`
   query IMAGES {
@@ -34,10 +35,10 @@ const ClinicBranch = () => {
     <>
       <div>
         <div className=" py-5 mx-4">
-          <h4 className="pb-4"> Our Clinic Branches</h4>
-          <div className="row">
+          <p className="pb-4 fs-4 fw-bold ms-md-3 ms-1"> Our Clinic Branches</p>
+          <Marquee pauseOnHover speed={80} className="">
             {data.branches.nodes.map((branch, index) => (
-              <div className="col-lg-3 col-md-6 col-sm-6" key={index}>
+              <div className="px-md-4 px-0 col-9 col-lg-12 col-md-11 col-sm-11" key={index}>
                 <div
                   className="card shadow-sm d-flex justify-content-center align-items-center"
                   style={{
@@ -58,7 +59,7 @@ const ClinicBranch = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </Marquee>
         </div>
       </div>
     </>

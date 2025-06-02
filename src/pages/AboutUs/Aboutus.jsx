@@ -9,7 +9,7 @@ export const Aboutus = () => {
   return (
     <>
       <Banner pageTitle="About Us" />
-      <div className="about-us">
+      <div className="about-us pe-1">
         <AboutUsDescription />
         <Mission />
  

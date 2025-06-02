@@ -23,9 +23,9 @@ export const HomeAbout = () => {
   if (error) return <p>Error</p>;
   return (
     <div className="home-about-us">
-      <div className="container py-5 my-5">
-        <h3 className="mb-3">About Us</h3>
-        <div className="row g-5">
+      <div className="container-fluid py-5 ">
+        <p className="mb-3 fs-4 fw-bold">About Us</p>
+        <div className="row g-lg-5">
           <div className="col-lg-7 ">
             <p
               className="lh-lg text-justify"
@@ -40,7 +40,7 @@ export const HomeAbout = () => {
             />
           </div>
         </div>
-        <Link to="about-us" className="btn btn-primary m-2 ">
+        <Link to="about-us" className="btn btn-primary mt-3 mt-lg-0 ">
           View More
         </Link>
       </div>

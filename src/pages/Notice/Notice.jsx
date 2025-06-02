@@ -14,7 +14,7 @@ export const Notice = () => {
         <NoticeCarousel />
       </div>
       <div className="notice-section container my-5 py-5">
-        <h3>News</h3>
+        <h4 className="fw-bold">News</h4>
         <hr />
         <NoticeCard />
       </div>

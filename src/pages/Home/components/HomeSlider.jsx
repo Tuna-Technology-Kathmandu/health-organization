@@ -46,7 +46,7 @@ export const HomeSlider = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 10000,
     arrows: window.innerWidth > 768,
     responsive: [
       {
@@ -60,15 +60,14 @@ export const HomeSlider = () => {
   };
 
   return (
-    <div className="slider-container">
-      {/* Marquee/Ticker Section */}
+    <div className="slider-container" >
+      {/* marquee section */}
       <div
-        className="marquee-container py-2 d-flex align-items-center"
-        style={{ background: "#3BBCF626", minHeight: "32px" }}
+        className="marquee-container pt-3 d-flex align-items-center "
+        style={{ background: "#3BBCF626", minHeight: "32px", maxHeight:"42px" }}
       >
-        <div className="container">
-          <p
-            className="scrolling-text text-center m-0"
+        <div className="">
+          <p className="scrolling-text text-center m-0 "
             dangerouslySetInnerHTML={{ __html: content }}
           />
         </div>
@@ -83,15 +82,14 @@ export const HomeSlider = () => {
 
           return (
             <div key={index} className="slide">
-              <div
-                className="slide-background"
+              <div className="slide-background "
                 style={{ backgroundImage: `url(${featuredImageUrl})` }}
               >
                 <div className="overlay"></div>
                 <div className="container h-100">
                   <div className="content-wrapper h-100 d-flex flex-column justify-content-end pb-4 pb-lg-5">
                     <div className="content">
-                      <h1 className="fw-bold display-5 display-lg-1 mb-3 mb-lg-4 w-100 w-lg-75">
+                      <h1 className="fw-bold display-6 display-lg-1 mb-3 mb-lg-4 w-100 w-lg-75">
                         {item?.title?.rendered}
                       </h1>
                       <p className="d-none d-md-block mb-4">

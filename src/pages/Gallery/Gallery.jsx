@@ -1,14 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { gql, useQuery } from "@apollo/client";
 import client from "../../utils/ApolloClient";
 import { Banner } from "../../components/Banner";
-import "../../assets/css/Gallery.css";
-
-const getRandomHeight = () => {
-  const array = new Uint32Array(1);
-  crypto.getRandomValues(array);
-  return 180 + (array[0] % 121); // Random value between 180 - 300
-};
+import "../Home/components/HomeGallery.css";
 
 const GET_IMAGE = gql`
   query IMAGES($id: ID!) {
@@ -18,43 +12,49 @@ const GET_IMAGE = gql`
     }
   }
 `;
+
+// Helper to extract images
+const extractImages = (htmlContent) => {
+  if (!htmlContent) return [];
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(htmlContent, "text/html");
+  return Array.from(doc.querySelectorAll("img")).map((img) => img.src);
+};
+
 export const Gallery = () => {
+  const [selectedImage, setSelectedImage] = useState(null);
   const { loading, error, data } = useQuery(GET_IMAGE, {
     client,
     variables: { id: "35" },
   });
 
-  if (loading) return (
-    <>
-      <Banner pageTitle="Gallery" />
-      <GalleryShimmer />
-    </>
-  );
+  if (loading)
+    return (
+      <>
+        <Banner pageTitle="Gallery" />
+        <GalleryShimmer />
+      </>
+    );
 
   if (error) return <p>Error: {error.message}</p>;
-
-  // Function to extract image URLs from raw HTML
-  const extractImages = (htmlContent) => {
-    if (!htmlContent) return [];
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(htmlContent, "text/html");
-    return Array.from(doc.querySelectorAll("img")).map((img) => img.src);
-  };
 
   const imageUrls = data?.page?.content ? extractImages(data.page.content) : [];
 
   return (
     <>
       <Banner pageTitle="Gallery" />
-      <div className="masonry-layout container my-5">
+      <div className="masonry-layout container-fluid my-5">
         {imageUrls.length > 0 ? (
           imageUrls.map((src, index) => (
-            <div key={index} className="masonry-item">
+            <div
+              key={index}
+              className="masonry-item"
+              onClick={() => setSelectedImage(src)}
+            >
               <img
                 src={src}
                 alt={`Gallery Image ${index + 1}`}
                 className="gallery-image"
-                style={{ height: `${getRandomHeight()}px` }}
                 loading="lazy"
               />
             </div>
@@ -63,24 +63,34 @@ export const Gallery = () => {
           <p>No images found in gallery</p>
         )}
       </div>
+
+      {selectedImage && (
+        <div className="lightbox-overlay" onClick={() => setSelectedImage(null)}>
+          <div className="lightbox-container" onClick={(e) => e.stopPropagation()}>
+            <button className="lightbox-close" onClick={() => setSelectedImage(null)}>
+              &times;
+            </button>
+            <img src={selectedImage} alt="Preview" className="lightbox-image" />
+          </div>
+        </div>
+      )}
     </>
   );
 };
 
 // Gallery Shimmer Component
 const GalleryShimmer = () => {
-  // Show 6 placeholder items
   const shimmerItems = Array(6).fill(0);
-  
+
   return (
     <div className="masonry-layout container my-5">
       {shimmerItems.map((_, index) => (
         <div key={index} className="masonry-item placeholder-glow">
-          <div 
-            className="placeholder" 
+          <div
+            className="placeholder"
             style={{
               height: `${180 + (index % 4) * 40}px`,
-              width: '100%'
+              width: "100%",
             }}
           ></div>
         </div>
