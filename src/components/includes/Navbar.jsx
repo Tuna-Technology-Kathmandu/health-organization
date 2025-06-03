@@ -2,18 +2,30 @@ import React from 'react'
 import { MdOutlineEmail } from 'react-icons/md'
 import { FaFacebook, FaTwitter } from 'react-icons/fa'
 import logo from '../../assets/images/logo.png'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const Header = () => {
+    const location = useLocation()
+
+  const handleNavLinkClick = () => {
+    const navbar = document.getElementById('navbarNav')
+    if (navbar?.classList.contains('show')) {
+      const bsCollapse = new window.bootstrap.Collapse(navbar, {
+        toggle: true,
+      })
+      bsCollapse.hide()
+    }
+  }
+
   return (
     <div>
       {/* Top Bar - Hidden on small screens */}
       <div className='d-none d-md-flex justify-content-between border-bottom px-3 px-lg-5 py-2 bg-light'>
         <div className='p-2 d-flex align-items-center'>
           <MdOutlineEmail className='text-primary' />
-          <span className='ms-2 font-monospace small text-truncate'>
+          <a href='mailto:info@allnepalclinic.com' className='ms-2 font-monospace small text-truncate text-black text-decoration-none'>
             info@allnepalclinic.com
-          </span>
+          </a>
         </div>
         <div className='p-2 d-flex align-items-center'>
           <span className='me-2 text-muted small'>Follow us:</span>
@@ -59,7 +71,7 @@ const Header = () => {
           <div className='collapse navbar-collapse' id='navbarNav'>
             <ul className='navbar-nav ms-auto align-items-center'>
               <li className='nav-item'>
-                <Link className='nav-link text-dark px-2 px-lg-3' to='/'>
+                <Link className='nav-link text-dark px-2 px-lg-3' to='/' onClick={handleNavLinkClick}>
                   HOME
                 </Link>
               </li>
@@ -69,7 +81,7 @@ const Header = () => {
               <li className='nav-item'>
                 <Link
                   className='nav-link text-dark px-2 px-lg-3'
-                  to='/about-us'
+                  to='/about-us' onClick={handleNavLinkClick}
                 >
                   ABOUT
                 </Link>
@@ -78,7 +90,7 @@ const Header = () => {
                 |
               </li>
               <li className='nav-item'>
-                <Link className='nav-link text-dark px-2 px-lg-3' to='/service'>
+                <Link className='nav-link text-dark px-2 px-lg-3' to='/service' onClick={handleNavLinkClick}>
                   <span className='d-none d-md-inline'>FACILITIES & </span>
                   SERVICES
                 </Link>
@@ -87,7 +99,7 @@ const Header = () => {
                 |
               </li>
               <li className='nav-item'>
-                <Link className='nav-link text-dark px-2 px-lg-3' to='/gallery'>
+                <Link className='nav-link text-dark px-2 px-lg-3' to='/gallery' onClick={handleNavLinkClick}>
                   GALLERY
                 </Link>
               </li>
@@ -97,7 +109,7 @@ const Header = () => {
               <li className='nav-item'>
                 <Link
                   className='nav-link text-dark px-2 px-lg-3'
-                  to='/contact-us'
+                  to='/contact-us' onClick={handleNavLinkClick}
                 >
                   CONTACT
                 </Link>
@@ -106,7 +118,7 @@ const Header = () => {
                 |
               </li>
               <li className='nav-item'>
-                <Link className='nav-link text-dark px-2 px-lg-3' to='/notice'>
+                <Link className='nav-link text-dark px-2 px-lg-3' to='/notice' onClick={handleNavLinkClick}>
                   NOTICE
                 </Link>
               </li>
